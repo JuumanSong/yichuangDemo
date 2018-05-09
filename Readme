@@ -1,0 +1,104 @@
+一创appFrameWork：使用xcode9.2打包，最低支持ios7.0
+
+将YiChuangFrameWork文件夹拖进项目
+
+Podfile添加
+platform :ios, '7.0'
+target 'YiChangDingPan' do
+pod 'AFNetworking', '~> 3.1.0'
+pod 'Masonry'
+pod 'YYModel'
+pod 'TYAttributedLabel', '~> 2.6.2'
+
+
+在Build Phases里添加依赖库
+libicucore.dylib
+CFNetwork.framework
+Security.framework
+Foundation.framework
+FMDB.framework
+
+
+在Build Setting里修改
+Enable Bitcode  设置为 NO
+
+
+DYYCInterface：framework 提供头文件
+
+
+需要实现的代理方法：
+
+@protocol DYYCInterfaceDelegate <NSObject>
+
+@required
+
+//返回设备id
+- (NSString *)deviceId;
+
+//返回用户id(token?)，未登录请返回nil
+- (NSString *)userId;
+
+//返回用户(设备)自选股信息(只需要沪深A股:[600001,000001])
+- (NSArray *)userStockArr;
+
+/*
+ 获取baseUrl
+ 返回格式：{webSocketBase:@"",ycBase:@""}
+ webSocketBase 为长链接baseUrl
+ ycBase 为http链接baseUrl
+ */
+- (NSDictionary *)getBaseUrl;
+
+@optional
+
+//跳转到沪深A股详情页:(ticker:600001)
+- (void)pushToStockDetailVCWithTicker:(NSString *)ticker;
+
+@end
+
+
+
+调用方式：
+
+1.DYYCInterface 单例方法
++ (instancetype)shareInstance;
+
+
+2.在AppDelegate中的applicationWillEnterForeground和applicationDidEnterBackground分别加上
+
+[[DYYCInterface shareInstance] applicationWillEnterBackground];
+[[DYYCInterface shareInstance] applicationWillEnterForeground];
+
+主要用于长链接的及时释放与页面刷新
+
+
+3.app launch完成后（建议写在app window的rootViewController的viewDidLoad里）
+加上：  
+[DYYCInterface shareInstance].delegate = self;
+[[DYYCInterface shareInstance] appStart];
+并实现代理
+
+
+4.个股异动入口view
+- (UIView *)dyStocksStareBarViewWithPushBlock:(void(^)(id data))block;
+在view所在的viewController中加入更新开关
+viewWillAppear：
+[[DYYCInterface shareInstance]stocksStareOpen:YES target:self.stockView];
+viewWillDisappear：
+[[DYYCInterface shareInstance]stocksStareOpen:NO target:self.stockView];
+
+
+5.板块异动入口view
+- (UIView *)dyThemeStareBarViewWithPushBlock:(void(^)(id data))block;
+在view所在的viewController中加入更新开关
+viewWillAppear：
+[[DYYCInterface shareInstance]themeStareOpen:YES target:self.plateView];
+viewWillDisappear：
+[[DYYCInterface shareInstance]themeStareOpen:NO target:self.plateView];
+
+
+6.返回监控落地页1:个股异动 2.板块异动
+- (UIViewController *)dyStareStockVC:(NSInteger)tag;
+
+
+

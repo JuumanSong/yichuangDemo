@@ -1,0 +1,6 @@
+framework module Pods_YiChuangDemo {
+  umbrella header "Pods-YiChuangDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
