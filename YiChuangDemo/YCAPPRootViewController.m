@@ -41,7 +41,7 @@
 #pragma mark--DYYCInterfaceDelegate
 //返回设备id
 - (NSString *)deviceId{
-    return @"xxxxxxx7";
+    return @"xxxxxx38";
 }
 
 //返回用户id，未登录请返回nil
@@ -63,6 +63,8 @@
                           @"ycBase":@"http://fcsc-staring.respool.wmcloud-stg.com/"};
     return dic;
 }
+
+//沪深A股详情页跳转:(ticker:600001)
 -(void)pushToStockDetailVCWithTicker:(NSString *)ticker{
     
     NSLog(@"跳转个股详情页%@",ticker);
