@@ -21,7 +21,10 @@
 //返回设备id
 - (NSString *)deviceId;
 
-//返回用户id(token?)，未登录请返回nil
+//返回用户token
+- (NSString *)token;
+
+//返回用户id
 - (NSString *)userId;
 
 //返回用户(设备)自选股信息(沪深A股:[600001,000001])

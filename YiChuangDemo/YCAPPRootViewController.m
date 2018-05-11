@@ -41,12 +41,17 @@
 #pragma mark--DYYCInterfaceDelegate
 //返回设备id
 - (NSString *)deviceId{
-    return @"xxxxxx38";
+    return @"xxxxxx42";
 }
 
-//返回用户id，未登录请返回nil
+//返回用户token
+- (NSString *)token{
+    return @"userCert";
+}
+
+//返回用户id
 - (NSString *)userId{
-    return @"xxx";
+    return @"opUser";
 }
 
 //返回用户(设备)自选股信息
