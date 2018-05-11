@@ -21,7 +21,6 @@
 		F609787E20A463DD006354BA /* dy_dingpan.db in Resources */ = {isa = PBXBuildFile; fileRef = F609787920A463DD006354BA /* dy_dingpan.db */; };
 		F609787F20A463DD006354BA /* DYAppearance.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F609787A20A463DD006354BA /* DYAppearance.bundle */; };
 		F609788020A463DD006354BA /* YiChuangLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F609787B20A463DD006354BA /* YiChuangLibrary.bundle */; };
-		F609788120A463DD006354BA /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F609787C20A463DD006354BA /* FMDB.framework */; };
 		F62F5B24209340C100F88621 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62F5B23209340C000F88621 /* Security.framework */; };
 		F62F5B26209340CC00F88621 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62F5B25209340CC00F88621 /* Foundation.framework */; };
 		F62F5B28209340D800F88621 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62F5B27209340D700F88621 /* CFNetwork.framework */; };
@@ -73,7 +72,6 @@
 		F609787920A463DD006354BA /* dy_dingpan.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dy_dingpan.db; sourceTree = "<group>"; };
 		F609787A20A463DD006354BA /* DYAppearance.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DYAppearance.bundle; sourceTree = "<group>"; };
 		F609787B20A463DD006354BA /* YiChuangLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YiChuangLibrary.bundle; sourceTree = "<group>"; };
-		F609787C20A463DD006354BA /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FMDB.framework; sourceTree = "<group>"; };
 		F62F5B23209340C000F88621 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F62F5B25209340CC00F88621 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F62F5B27209340D700F88621 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -95,7 +93,6 @@
 				F62F5B28209340D800F88621 /* CFNetwork.framework in Frameworks */,
 				F62F5B26209340CC00F88621 /* Foundation.framework in Frameworks */,
 				F62F5B24209340C100F88621 /* Security.framework in Frameworks */,
-				F609788120A463DD006354BA /* FMDB.framework in Frameworks */,
 				A9694F4F2A6CF90AE05B99FF /* libPods-YiChuangDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +212,6 @@
 			children = (
 				F609787720A463DD006354BA /* YiChuangLibrary.framework */,
 				F609787820A463DD006354BA /* res */,
-				F609787C20A463DD006354BA /* FMDB.framework */,
 			);
 			path = YiChuangFrameWork;
 			sourceTree = SOURCE_ROOT;
@@ -241,7 +237,6 @@
 				60B0E66A20909DF0006C57F6 /* Sources */,
 				60B0E66B20909DF0006C57F6 /* Frameworks */,
 				60B0E66C20909DF0006C57F6 /* Resources */,
-				ECBD8C8B3831407F017DABDF /* [CP] Embed Pods Frameworks */,
 				C40933D3DF6F00C97ED5DC71 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -389,37 +384,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YiChuangDemo/Pods-YiChuangDemo-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YiChuangDemo/Pods-YiChuangDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECBD8C8B3831407F017DABDF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YiChuangDemo/Pods-YiChuangDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/TYAttributedLabel/TYAttributedLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYAttributedLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YiChuangDemo/Pods-YiChuangDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

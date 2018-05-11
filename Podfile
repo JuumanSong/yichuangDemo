@@ -1,9 +1,11 @@
 platform :ios, '7.0'
 target 'YiChuangDemo' do
-    pod 'AFNetworking', '~> 3.1.0'
+    pod 'AFNetworking'
     pod 'Masonry'
     pod 'YYModel'
-    pod 'TYAttributedLabel', '~> 2.6.2'
-#    use_frameworks!
+    pod 'TYAttributedLabel'
+    pod 'MJRefresh'
+    pod 'MBProgressHUD'
+    pod 'FMDB'
     inhibit_all_warnings!
 end

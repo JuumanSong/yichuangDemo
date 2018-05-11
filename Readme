@@ -4,11 +4,14 @@
 
 Podfile添加
 platform :ios, '7.0'
-target 'YiChangDingPan' do
-pod 'AFNetworking', '~> 3.1.0'
-pod 'Masonry'
-pod 'YYModel'
-pod 'TYAttributedLabel', '~> 2.6.2'
+target 'XXXXXX' do
+    pod 'AFNetworking'
+    pod 'Masonry'
+    pod 'YYModel'
+    pod 'TYAttributedLabel'
+    pod 'MJRefresh'
+    pod 'MBProgressHUD'
+    pod 'FMDB'
 
 
 在Build Phases里添加依赖库
@@ -16,7 +19,6 @@ libicucore.dylib
 CFNetwork.framework
 Security.framework
 Foundation.framework
-FMDB.framework
 
 
 在Build Setting里修改
