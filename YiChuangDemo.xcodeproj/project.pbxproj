@@ -647,7 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54LMN39WV7;
+				DEVELOPMENT_TEAM = 7Y78R63432;
 				INFOPLIST_FILE = YiChuangDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.YiChuangDemoUITests;
@@ -661,7 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54LMN39WV7;
+				DEVELOPMENT_TEAM = 7Y78R63432;
 				INFOPLIST_FILE = YiChuangDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayes.YiChuangDemoUITests;
