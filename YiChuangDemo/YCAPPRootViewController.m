@@ -41,7 +41,7 @@
 #pragma mark--DYYCInterfaceDelegate
 //返回设备id
 - (NSString *)deviceId{
-    return @"xxxxxx51";
+    return @"xxxxxx57";
 }
 
 //返回用户token
@@ -64,10 +64,10 @@
  返回格式：{webSocketBase:@"",ycBase:@""}
  */
 - (NSDictionary *)getBaseUrl{
-//    NSDictionary *dic = @{@"webSocketBase":@"ws://101.226.198.90:8722/",
-//                          @"ycBase":@"https://gw.wmcloud-stg.com/fcsc/"};
-    NSDictionary *dic = @{@"webSocketBase":@"ws://fcsc-staring.respool.wmcloud-stg.com:8722/",
-                          @"ycBase":@"http://fcsc-staring.respool.wmcloud-stg.com/"};
+    NSDictionary *dic = @{@"webSocketBase":@"ws://101.226.198.90:8722/",
+                          @"ycBase":@"https://gw.wmcloud-stg.com/fcsc/"};
+//    NSDictionary *dic = @{@"webSocketBase":@"ws://fcsc-staring.respool.wmcloud-stg.com:8722/",
+//                          @"ycBase":@"http://fcsc-staring.respool.wmcloud-stg.com/"};
     return dic;
 }
 
