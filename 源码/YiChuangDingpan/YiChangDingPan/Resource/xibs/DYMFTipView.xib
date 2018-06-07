@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xga-PY-PtU" customClass="DYMFTipView">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="18"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dy_img_pop.png" translatesAutoresizingMaskIntoConstraints="NO" id="d7w-og-QmP">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="18"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="iNH-b2-t30">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="15"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iNH-b2-t30" secondAttribute="bottom" constant="3" id="8Qa-RG-LMB"/>
+                <constraint firstAttribute="trailing" secondItem="d7w-og-QmP" secondAttribute="trailing" id="Fp2-Cv-T7h"/>
+                <constraint firstItem="d7w-og-QmP" firstAttribute="leading" secondItem="xga-PY-PtU" secondAttribute="leading" id="Ken-K0-h0a"/>
+                <constraint firstAttribute="bottom" secondItem="d7w-og-QmP" secondAttribute="bottom" id="RYN-9l-M5F"/>
+                <constraint firstItem="d7w-og-QmP" firstAttribute="top" secondItem="xga-PY-PtU" secondAttribute="top" id="XJT-ni-5Hh"/>
+                <constraint firstItem="iNH-b2-t30" firstAttribute="top" secondItem="xga-PY-PtU" secondAttribute="top" id="o4F-cr-4TK"/>
+                <constraint firstItem="iNH-b2-t30" firstAttribute="leading" secondItem="xga-PY-PtU" secondAttribute="leading" id="raG-ys-HFJ"/>
+                <constraint firstAttribute="trailing" secondItem="iNH-b2-t30" secondAttribute="trailing" id="sfm-MQ-qcM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgView" destination="d7w-og-QmP" id="F0C-fd-X1b"/>
+                <outlet property="titleLabel" destination="iNH-b2-t30" id="mxk-1n-X4q"/>
+            </connections>
+            <point key="canvasLocation" x="-97" y="360"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dy_img_pop.png" width="70" height="23"/>
+    </resources>
+</document>

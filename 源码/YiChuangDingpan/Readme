@@ -1,0 +1,12 @@
+一创智能盯盘 framework
+
+ 依赖库
+ libicucore.dylib
+ CFNetwork.framework
+ Security.framework
+ Foundation.framework
+ FMDB.framework
+
+
+ "Other Linker Flag" 添加 -all_load
+	

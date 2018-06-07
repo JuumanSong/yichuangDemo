@@ -1,0 +1,16 @@
+一创模拟app
+1.添加pod
+2.引入文件
+3.配置pch
+4.处理MRC文件
+5.删除不在git版本中的文件 DYStockDataSource.m
+6.引入FMDB
+7.添加依赖
+8.将pod中的每个framework的编译版本也要调整与主工程相对应
+
+
+
+
+public 改动记录
+
+扩展了MLButton，增加了图片在左，文本在右的情况，以及有无图片的UI显示

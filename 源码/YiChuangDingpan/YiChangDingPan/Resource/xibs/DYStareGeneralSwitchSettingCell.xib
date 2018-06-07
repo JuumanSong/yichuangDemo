@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DYStareGeneralSwitchSettingCellIdentifier" rowHeight="72" id="hXf-oy-qkQ" customClass="DYStareGeneralSwitchSettingCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXf-oy-qkQ" id="pjt-1f-0cs">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dy_img_loginpin.png" translatesAutoresizingMaskIntoConstraints="NO" id="f0c-yO-7GY">
+                        <rect key="frame" x="15" y="16" width="18" height="18"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ5-ei-UcH">
+                        <rect key="frame" x="38" y="15" width="39.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqy-v9-QC4">
+                        <rect key="frame" x="38" y="42" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-Is-h9I">
+                        <rect key="frame" x="316" y="8" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchButtonClick:" destination="hXf-oy-qkQ" eventType="valueChanged" id="DIG-BE-NOP"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Lqy-v9-QC4" firstAttribute="top" secondItem="pQ5-ei-UcH" secondAttribute="bottom" constant="8" id="2zG-3P-1zB"/>
+                    <constraint firstItem="pQ5-ei-UcH" firstAttribute="top" secondItem="pjt-1f-0cs" secondAttribute="top" constant="15" id="3F2-ux-5nA"/>
+                    <constraint firstItem="pQ5-ei-UcH" firstAttribute="leading" secondItem="pjt-1f-0cs" secondAttribute="leading" constant="38" id="6XZ-mz-UK1"/>
+                    <constraint firstItem="Lqy-v9-QC4" firstAttribute="leading" secondItem="pQ5-ei-UcH" secondAttribute="leading" id="9jK-FV-rj6"/>
+                    <constraint firstItem="f0c-yO-7GY" firstAttribute="centerY" secondItem="pQ5-ei-UcH" secondAttribute="centerY" id="BO5-FY-KRM"/>
+                    <constraint firstAttribute="bottom" secondItem="Lqy-v9-QC4" secondAttribute="bottom" constant="15" id="IWj-15-X7G"/>
+                    <constraint firstAttribute="trailing" secondItem="SnP-Is-h9I" secondAttribute="trailing" constant="10" id="Wqq-qE-6px"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lqy-v9-QC4" secondAttribute="trailing" constant="15" id="jNo-3c-Dqp"/>
+                    <constraint firstItem="SnP-Is-h9I" firstAttribute="top" secondItem="pjt-1f-0cs" secondAttribute="top" constant="8" id="kdY-Vv-5EY"/>
+                    <constraint firstItem="f0c-yO-7GY" firstAttribute="leading" secondItem="pjt-1f-0cs" secondAttribute="leading" constant="15" id="uJP-s4-5uD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="Lqy-v9-QC4" id="oUu-FS-s50"/>
+                <outlet property="leftImageView" destination="f0c-yO-7GY" id="MX7-hW-iZt"/>
+                <outlet property="switchButton" destination="SnP-Is-h9I" id="uW8-H8-Z0I"/>
+                <outlet property="titleLabel" destination="pQ5-ei-UcH" id="tAr-Iq-CyM"/>
+                <outlet property="titleLeftConstraint" destination="6XZ-mz-UK1" id="QXd-EN-hoP"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="27"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dy_img_loginpin.png" width="18" height="18"/>
+    </resources>
+</document>

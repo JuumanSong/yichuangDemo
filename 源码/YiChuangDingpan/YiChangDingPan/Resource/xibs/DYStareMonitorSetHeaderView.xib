@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KHz-oJ-XQt" customClass="DYStareMonitorSetHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dy_stare_bg3.png" translatesAutoresizingMaskIntoConstraints="NO" id="xEU-U4-IA5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-2D-IfW">
+                    <rect key="frame" x="0.0" y="117" width="375" height="63"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lr-vx-PiK">
+                            <rect key="frame" x="147" y="24" width="80" height="24"/>
+                            <color key="backgroundColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="Z2l-ef-wY7"/>
+                                <constraint firstAttribute="height" constant="24" id="wmm-rA-e97"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="编辑个股">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="editButtonClick:" destination="KHz-oJ-XQt" eventType="touchUpInside" id="PDW-0v-Jmu"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在监控您的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-kO-wKy">
+                            <rect key="frame" x="109.5" y="-3" width="86" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0只" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dto-J2-JfH">
+                            <rect key="frame" x="195.5" y="-3" width="23" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自选股" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yto-iB-Jpq">
+                            <rect key="frame" x="218.5" y="-3" width="43" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yto-iB-Jpq" firstAttribute="centerY" secondItem="Dto-J2-JfH" secondAttribute="centerY" id="2Wc-I8-D8m"/>
+                        <constraint firstAttribute="bottom" secondItem="4lr-vx-PiK" secondAttribute="bottom" constant="15" id="34j-E9-w96"/>
+                        <constraint firstAttribute="height" constant="63" id="3Qc-Be-zaP"/>
+                        <constraint firstItem="4lr-vx-PiK" firstAttribute="centerX" secondItem="vVn-2D-IfW" secondAttribute="centerX" id="Gkq-LY-dHC"/>
+                        <constraint firstItem="ghE-kO-wKy" firstAttribute="centerY" secondItem="Dto-J2-JfH" secondAttribute="centerY" id="KeB-pI-Xh5"/>
+                        <constraint firstItem="Dto-J2-JfH" firstAttribute="leading" secondItem="ghE-kO-wKy" secondAttribute="trailing" id="Qfj-mg-GQ6"/>
+                        <constraint firstItem="4lr-vx-PiK" firstAttribute="top" secondItem="Dto-J2-JfH" secondAttribute="bottom" constant="10" id="isZ-fR-dpd"/>
+                        <constraint firstItem="ghE-kO-wKy" firstAttribute="trailing" secondItem="vVn-2D-IfW" secondAttribute="centerX" constant="8" id="jIE-RD-hAu"/>
+                        <constraint firstItem="yto-iB-Jpq" firstAttribute="leading" secondItem="Dto-J2-JfH" secondAttribute="trailing" id="sNb-qf-h4N"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dy_img_monitor_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="hcB-xZ-oGP">
+                    <rect key="frame" x="138" y="13" width="99" height="94"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xEU-U4-IA5" firstAttribute="leading" secondItem="KHz-oJ-XQt" secondAttribute="leading" id="15p-Z3-skK"/>
+                <constraint firstItem="xEU-U4-IA5" firstAttribute="top" secondItem="KHz-oJ-XQt" secondAttribute="top" id="49q-dx-ZOc"/>
+                <constraint firstItem="vVn-2D-IfW" firstAttribute="top" secondItem="hcB-xZ-oGP" secondAttribute="bottom" constant="10" id="4YG-4E-Jub"/>
+                <constraint firstItem="vVn-2D-IfW" firstAttribute="bottom" secondItem="KHz-oJ-XQt" secondAttribute="bottom" id="QMB-nP-ubi"/>
+                <constraint firstAttribute="trailing" secondItem="xEU-U4-IA5" secondAttribute="trailing" id="R1j-1D-ljQ"/>
+                <constraint firstItem="hcB-xZ-oGP" firstAttribute="centerX" secondItem="KHz-oJ-XQt" secondAttribute="centerX" id="cf7-lc-EYU"/>
+                <constraint firstAttribute="bottom" secondItem="xEU-U4-IA5" secondAttribute="bottom" id="tQ1-G5-514"/>
+                <constraint firstAttribute="trailing" secondItem="vVn-2D-IfW" secondAttribute="trailing" id="taA-aF-sLD"/>
+                <constraint firstItem="vVn-2D-IfW" firstAttribute="leading" secondItem="KHz-oJ-XQt" secondAttribute="leading" id="xs8-IQ-UuC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="countLabel" destination="Dto-J2-JfH" id="DAm-aG-lh0"/>
+                <outlet property="editButton" destination="4lr-vx-PiK" id="mqv-N9-evH"/>
+            </connections>
+            <point key="canvasLocation" x="72.5" y="-117"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dy_img_monitor_header.png" width="99" height="94"/>
+        <image name="dy_stare_bg3.png" width="375" height="180"/>
+    </resources>
+</document>
