@@ -102,7 +102,7 @@
 - (void)showSelectItemWithType:(DYItemMarkTypeViewDisplayType)type Block:(void(^)(NSArray *arr))Block {
     
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSMutableArray *arr = [NSMutableArray array];
         id data = [[DYYCStocksMoveService shareInstance] getLocalSaveSettingDataType:type];
         
