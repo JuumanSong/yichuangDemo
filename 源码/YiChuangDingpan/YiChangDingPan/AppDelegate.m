@@ -72,6 +72,17 @@
     return @"xxxxx";
 }
 
+
+//返回应用id
+- (NSString *)appKey{
+    return @"6";
+}
+
+//返回设备类型
+- (NSString *)appType{
+    return @"ios";
+}
+
 //返回用户token
 - (NSString *)token{
     return @"123123123xxx";

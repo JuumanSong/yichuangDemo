@@ -305,7 +305,11 @@ static DYStareOptionalMonitorSetService *monitorService = nil;
 + (void)setMsgStatusWithParam:(NSDictionary *)dict
                       Success:(void(^)(id data))success
                          fail:(void(^)(id data))fail {
-    [DYYCDataSourceList setMsgStatusParams:dict Success:^(NSInteger code, id data, NSString *message) {
+    NSMutableDictionary *tmp = [[NSMutableDictionary alloc] initWithDictionary:dict];
+    id<DYYCInterfaceDelegate> delegate = [DYYCInterface shareInstance].delegate;
+    [tmp setObject:[delegate appKey] forKey:@"appKey"];
+    [tmp setObject:[delegate appType] forKey:@"appType"];
+    [DYYCDataSourceList setMsgStatusParams:tmp Success:^(NSInteger code, id data, NSString *message) {
         NSLog(@"--------data==%@",data);
         success(data);
     } fail:^(NSError *error) {

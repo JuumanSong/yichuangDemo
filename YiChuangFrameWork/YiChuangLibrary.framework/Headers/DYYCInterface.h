@@ -21,11 +21,19 @@
 //返回设备id
 - (NSString *)deviceId;
 
+//返回应用id
+- (NSString *)appKey;
+
+//返回设备类型
+- (NSString *)appType;
+
 //返回用户token
 - (NSString *)token;
 
 //返回用户id
 - (NSString *)userId;
+
+
 
 //返回用户(设备)自选股信息(沪深A股:[600001,000001])
 - (NSArray *)userStockArr;
