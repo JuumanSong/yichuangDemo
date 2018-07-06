@@ -1,0 +1,6 @@
+framework module YiChuangLibrary {
+  umbrella header "YiChuangLibrary.h"
+
+  export *
+  module * { export * }
+}

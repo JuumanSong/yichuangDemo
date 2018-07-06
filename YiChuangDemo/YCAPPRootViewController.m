@@ -41,7 +41,7 @@
 #pragma mark--DYYCInterfaceDelegate
 //返回设备id
 - (NSString *)deviceId{
-    return @"xxxxxx87";
+    return @"xxxxx617";
 }
 
 //返回应用id

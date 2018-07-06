@@ -17,6 +17,7 @@
 
 #import "DYYCStockBarIndexView.h"
 #import "DYYC_PlateMoveEnterView.h"
+#import "DYYCStockHelper.h"
 
 static DYYCInterface* instance = nil;
 
@@ -160,6 +161,24 @@ static DYYCInterface* instance = nil;
     } fail:^(id data) {
         
     }];
+}
+
+//返回信号类型
++ (NSString *)getMsgBySct:(NSString *)sct bt:(NSString *)bt otherMsg:(NSString *)msg{
+    if (sct.integerValue == 12) { // 盘后多日信号类型
+        return msg;
+    }
+    else if (sct.integerValue == 5) {// 重要公告
+        return @"重要公告";
+    }
+    else if (sct.integerValue == 6) { //相似K线
+        return @"相似K线";
+    }
+    else {
+        NSString *key = [sct stringByAppendingString:bt];
+        return [[DYYCStockHelper shareInstance] getMoveMsgWithCode:key];
+    }
+    return nil;
 }
 
 @end

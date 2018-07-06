@@ -89,4 +89,7 @@
 //板块监控bar开始时时更新 - open：开启or关闭
 - (void)themeStareOpen:(BOOL)open target:(id)target;
 
+//返回信号类型,盘后多日需要传nt字段
++ (NSString *)getMsgBySct:(NSString *)sct bt:(NSString *)bt otherMsg:(NSString *)msg;
+
 @end
