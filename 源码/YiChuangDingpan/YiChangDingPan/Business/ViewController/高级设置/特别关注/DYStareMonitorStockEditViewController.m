@@ -18,7 +18,6 @@
 #import "YCButton.h"
 #import "DYTools+DeviceInfo.h"
 
-#define StockArray [DYStareOptionalMonitorSetService shareInstance].stockArray
 
 @interface DYStareMonitorStockEditViewController ()<UITableViewDelegate, UITableViewDataSource,DYStareWizardSearchDelegate, DYStareMonitorStockEditBottomViewDelegate,UIAlertViewDelegate>
 
@@ -31,6 +30,8 @@
 @property (nonatomic, assign) BOOL isSelectAll; // 是否全选
 @property (nonatomic, strong) YCButton *messagePushButton;
 @property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) NSArray* stockArray;
+
 
 @end
 
@@ -39,6 +40,7 @@
 #pragma mark - View's Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.stockArray = [DYStareOptionalMonitorSetService shareInstance].stockArray;
 }
 
 - (void)initViewData {
@@ -122,7 +124,7 @@
 
 #pragma mark - UI Methods
 - (void)showViewState {
-    if (StockArray.count > 0) {
+    if (self.stockArray.count > 0) {
         self.noDataView.hidden = YES;
         self.myTableView.scrollEnabled = YES;
         [self showRoboStateTo:self.mainView state:DYRoboViewTypeNormal];
@@ -149,7 +151,7 @@
         }else {
             self.messagePushButton.hidden = YES;
             self.lineView.hidden = YES;
-            if (StockArray.count > 0) {
+            if (self.stockArray.count > 0) {
                 [self.myTableView reloadData];
             }else {
                 [self showToast:@"去添加股票~"];
@@ -178,7 +180,7 @@
             [self.dyNavTitleView setRightBtnText:@"编辑" color:DYAppearanceColor(@"W1", 1.0)
                                        withClick:^(id data) {
                                            
-                                           if (StockArray.count > 0) {
+                                           if (self.stockArray.count > 0) {
                                                [weakSelf changeRightButtonWithEdit:YES];
                                                [weakSelf.myTableView reloadData];
                                            }else {
@@ -228,7 +230,7 @@
 
 #pragma mark - UITableViewDatasource / UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return StockArray.count;
+    return self.stockArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -242,7 +244,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     DYStareMonitorStockEditHeaderView *header = (DYStareMonitorStockEditHeaderView *)[DYNibInitService getNibViewByName:@"DYStareMonitorStockEditHeaderView" bundleName:@"YiChuangLibrary"];
     
-    NSString *countStr = [NSString stringWithFormat:@"%lu只", (unsigned long)StockArray.count];
+    NSString *countStr = [NSString stringWithFormat:@"%lu只", (unsigned long)self.stockArray.count];
     WS(weakSelf);
     [header configStockCount:countStr clickBlock:^(id data) {
         DYStareWizardSearchViewController *vc = [[DYStareWizardSearchViewController alloc]init];
@@ -253,10 +255,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (StockArray.count > 0) {
+    if (self.stockArray.count > 0) {
         DYStareMonitorStockEditCell *cell = [DYNibInitService getDequeueReusableCell:tableView bundleName:@"YiChuangLibrary" byNibName:@"DYStareMonitorStockEditCell" reuseIdentifier:DYStareMonitorStockEditCellID];
         
-        DYStareWizardStockInfoModel *model = StockArray[indexPath.row];
+        DYStareWizardStockInfoModel *model = self.stockArray[indexPath.row];
         
         BOOL isSelect = NO;
         if ([self.selectArray containsObject:model]) {
@@ -285,11 +287,11 @@
 #pragma mark - Cell Click
 // cell点击事件
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row > StockArray.count - 1) {
+    if (indexPath.row > self.stockArray.count - 1) {
         return;
     }
     
-    DYStareWizardStockInfoModel *model = StockArray[indexPath.row];
+    DYStareWizardStockInfoModel *model = self.stockArray[indexPath.row];
     
     if ([self.selectArray containsObject:model]) {
         self.isSelectAll = NO;
@@ -298,7 +300,7 @@
         [self.selectArray addObject:model];
     }
     
-    if (self.selectArray.count == StockArray.count) {
+    if (self.selectArray.count == self.stockArray.count) {
         self.isSelectAll = YES;
     }
     
@@ -337,7 +339,7 @@
     self.isSelectAll = !self.isSelectAll;
     
     if (self.isSelectAll) {
-        self.selectArray = [StockArray mutableCopy];
+        self.selectArray = [self.stockArray mutableCopy];
         
     }else {
         [self.selectArray removeAllObjects];
@@ -386,15 +388,15 @@
     model.status = status;
     model.exchangeCD = item.tradeMarket;
     
-    NSMutableArray *stockArray = [[NSMutableArray alloc]init];
-    [stockArray addObject:model];
+    NSMutableArray *stockList = [[NSMutableArray alloc]init];
+    [stockList addObject:model];
     
     if (selected) { // 添加
         [DYProgressHUD showBingGoIndicatorInView:self.navigationController.view
                                          message:@"添加成功"];
-        [self addStockList:stockArray];
+        [self addStockList:stockList];
         
-        if (StockArray.count >20) {
+        if (self.stockArray.count >20) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [DYProgressHUD showBingGoIndicatorInView:self.navigationController.view
                                                  message:@"特别关注个股最好不超过20只哦，压力满满"];
@@ -403,7 +405,7 @@
     }else {
         [DYProgressHUD showErrorIndicatorInView:self.navigationController.view
                                         message:@"取消添加"];
-        [self deleteStockList:stockArray];
+        [self deleteStockList:stockList];
     }
 }
 
@@ -414,8 +416,8 @@
 
 //判断是否添加
 - (BOOL)judgeStockItemIsAdded:(DYStockPropertyItem *)item {
-    for (int i = 0; i < StockArray.count; i++) {
-        DYStareWizardStockInfoModel *model = StockArray[i];
+    for (int i = 0; i < self.stockArray.count; i++) {
+        DYStareWizardStockInfoModel *model = self.stockArray[i];
         if ([item.tradeCode isEqualToString:model.tickerId]) {
             return YES;
         }

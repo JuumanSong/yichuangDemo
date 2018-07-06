@@ -225,7 +225,18 @@ static DYStareOptionalMonitorSetService *monitorService = nil;
         
         for (int i = 0; i < array.count; i++) {
             DYStareWizardStockInfoModel *model = array[i];
-            [[DYStareOptionalMonitorSetService shareInstance].stockArray insertObject:model atIndex:0];
+            NSArray *tmp = [DYStareOptionalMonitorSetService shareInstance].stockArray;
+            BOOL hasMOdel = NO;
+            for (int k=0; k<tmp.count; k++) {
+                DYStareWizardStockInfoModel *tmpModel = tmp[k];
+                if([tmpModel.tickerId isEqualToString:model.tickerId]){
+                    hasMOdel = YES;
+                    break;
+                }
+            }
+            if(!hasMOdel){
+                [[DYStareOptionalMonitorSetService shareInstance].stockArray insertObject:model atIndex:0];
+            }
         }
     
         success(@(YES));

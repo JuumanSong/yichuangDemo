@@ -103,6 +103,11 @@ static DYYCStocksMoveService *stocksMoveService = nil;
     
     
     switch (model.category) {
+        case 1:
+        {
+            [param setValue:@"XSHG,XSHE" forKey:@"e"];
+        }
+            break;
         case 2:
         {
             [param setValue:@"XSHG" forKey:@"e"];

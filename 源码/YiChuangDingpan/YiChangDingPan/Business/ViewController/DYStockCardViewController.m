@@ -48,8 +48,8 @@
     [super initViewData];
     [self configNavView];
     
-    //首次上次自选股到高级关注
-    [DYStareOptionalMonitorSetService firstTimeAddUserStock];
+//    //首次上次自选股到高级关注
+//    [DYStareOptionalMonitorSetService firstTimeAddUserStock];
 }
 
 - (void)initSubViews {
