@@ -153,14 +153,22 @@
         [weakSelf.view endEditing:YES];
         NSNumber *num = data;
         if ([num boolValue]) {
-            [weakSelf showToast:@"创建成功"];
+            if([weakSelf.parentViewController isKindOfClass:[UIViewController class]]){
+                [weakSelf.parentViewController showToast:@"创建成功"];
+            }
             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(creatRemindDownNeedToPushVC)]) {
                 [weakSelf.delegate creatRemindDownNeedToPushVC];
             }
+            [self clearAll];
         }else {
             [weakSelf showToast:@"创建失败"];
         }
     }];
+}
+
+-(void)clearAll{
+    self.service.stockModel = nil;
+    [self.myTableView reloadData];
 }
 
 #pragma mark - UITableViewDatasource / UITableViewDelegate

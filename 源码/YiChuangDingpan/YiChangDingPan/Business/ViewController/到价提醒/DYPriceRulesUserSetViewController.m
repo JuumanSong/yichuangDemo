@@ -156,6 +156,7 @@
     [cell editBlock:^(id data) {
         if (weakSelf.block) {
             weakSelf.block(model);
+            NSLog(@"【修改到价提醒对象id--%@;tickerId--%@】",model.cId,model.stockInfo.tickerId);
         }
     }];
     return cell;

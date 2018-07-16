@@ -81,7 +81,8 @@
         [self.colorArray addObject:DYAppearanceColor(@"B1", 1)];
         NSMutableArray *emptyArray = [NSMutableArray arrayWithCapacity:0];
         for (DYTimeSharePointModel *pModel in orgModel.timeShareModel.pointsArray) {
-            for (DYMarketForecastPointModel *tipModel in orgModel.tipModelArr) {
+            for (NSInteger k=orgModel.tipModelArr.count-1;k>=0;k--) {
+                DYMarketForecastPointModel *tipModel = orgModel.tipModelArr[k];
                 if (tipModel.barTime && [tipModel.barTime isEqualToString:pModel.barTime]) {
                     NSMutableArray *lineArray = [NSMutableArray arrayWithCapacity:0];
                     [lineArray addObjectsFromArray:[emptyArray copy]];

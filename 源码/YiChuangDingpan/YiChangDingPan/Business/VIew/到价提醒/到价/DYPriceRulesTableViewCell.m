@@ -26,7 +26,7 @@
     self.titleLabel.font = DYAppearanceFont(@"T5");
     // 缩放switch的size
     self.switchView.transform = CGAffineTransformMakeScale(0.8, 0.8);
-    self.switchView.onTintColor = DYAppearanceColor(@"B14", 1.0);
+    self.switchView.onTintColor = DYAppearanceColorFromHex(0xCEA76E, 1);
     
     self.boxLabel.textColor = DYAppearanceColor(@"W1", 1.0);
     self.boxLabel.layer.cornerRadius = 2;
