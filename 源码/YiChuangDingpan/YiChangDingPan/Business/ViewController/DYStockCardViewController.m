@@ -81,6 +81,9 @@
         [self setPageViewcontrollers:@[self.viewControllers[self.showIndex]]];
         self.dyNavTitleView.rightBtn.hidden = YES;
     }
+    else{
+        self.stocksVC.showYin = YES;
+    }
 }
 
 - (void)configNavView {

@@ -10,13 +10,11 @@
 #import "DYBasePopupView.h"
 #import "DYItem.h"
 #import "DYPopBoxHeader.h"
-#import "DYDropDownBox.h"
 #import "DYYCStocksMoveService.h"
 #import "DYYCIndustryListService.h"
 
 @interface DYPopHeaderView()<DYDropDownBoxDelegate,DYBasePopupViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray <DYDropDownBox *> *dropDownBoxArray;
 @property (nonatomic, strong) NSMutableArray <DYItem *>*itemArray;
 @property (nonatomic, strong) NSMutableArray <DYBasePopupView *>*symbolArray;  /*当成一个队列来标记那个弹出视图**/
 @property (nonatomic, strong) CALayer *topLine;

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DYDropDownBox.h"
+
 
 @class DYPopHeaderView,DYItem;
 
@@ -29,6 +31,8 @@
 @property (nonatomic, weak) id<DYPopHeaderViewDataSource> dataSource;
 @property (nonatomic, weak) id<DYPopHeaderViewDelegate> delegate;
 @property (nonatomic,strong) UIView *baseView;
+
+@property (nonatomic, strong) NSMutableArray <DYDropDownBox *> *dropDownBoxArray;
 
 - (void)reload;
 - (void)dimissPopView;

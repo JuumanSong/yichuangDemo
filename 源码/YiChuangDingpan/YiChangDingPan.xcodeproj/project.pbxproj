@@ -219,6 +219,11 @@
 		F609744B20A41687006354BA /* YiChuangLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F609744A20A41687006354BA /* YiChuangLibrary.bundle */; };
 		F65B0EF220998E91001DCE4C /* DYSystemDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F65B0EF120998E91001DCE4C /* DYSystemDataSource.m */; };
 		F65B2E05209FF0E0001DCE4C /* DYYCStockBarIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65B2E04209FF0E0001DCE4C /* DYYCStockBarIndexView.m */; };
+		F697A8C8210708AA002F306E /* DYExplainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A8C6210708AA002F306E /* DYExplainHelper.m */; };
+		F697A8CD210708F8002F306E /* DYExplainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A8CA210708F7002F306E /* DYExplainModel.m */; };
+		F697A8CE210708F8002F306E /* DYExplainSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A8CC210708F8002F306E /* DYExplainSubModel.m */; };
+		F697A8D221070B18002F306E /* DYPopview.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A8D121070B18002F306E /* DYPopview.m */; };
+		F697A8D621073D65002F306E /* DYNewGuidePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A8D521073D64002F306E /* DYNewGuidePopView.m */; };
 		F6A8653D208DD78F00A10959 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A86537208DD78F00A10959 /* SRWebSocket.m */; };
 		F6A8653E208DD78F00A10959 /* DYWebSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8653C208DD78F00A10959 /* DYWebSocketService.m */; };
 		F6A86540208DD7C400A10959 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A8653F208DD7C300A10959 /* libicucore.tbd */; };
@@ -673,6 +678,16 @@
 		F65B0EF120998E91001DCE4C /* DYSystemDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSystemDataSource.m; sourceTree = "<group>"; };
 		F65B2E03209FF0E0001DCE4C /* DYYCStockBarIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYYCStockBarIndexView.h; sourceTree = "<group>"; };
 		F65B2E04209FF0E0001DCE4C /* DYYCStockBarIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYYCStockBarIndexView.m; sourceTree = "<group>"; };
+		F697A8C6210708AA002F306E /* DYExplainHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYExplainHelper.m; sourceTree = "<group>"; };
+		F697A8C7210708AA002F306E /* DYExplainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYExplainHelper.h; sourceTree = "<group>"; };
+		F697A8C9210708F7002F306E /* DYExplainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYExplainModel.h; sourceTree = "<group>"; };
+		F697A8CA210708F7002F306E /* DYExplainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYExplainModel.m; sourceTree = "<group>"; };
+		F697A8CB210708F8002F306E /* DYExplainSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYExplainSubModel.h; sourceTree = "<group>"; };
+		F697A8CC210708F8002F306E /* DYExplainSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYExplainSubModel.m; sourceTree = "<group>"; };
+		F697A8D021070B18002F306E /* DYPopview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPopview.h; sourceTree = "<group>"; };
+		F697A8D121070B18002F306E /* DYPopview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPopview.m; sourceTree = "<group>"; };
+		F697A8D421073D64002F306E /* DYNewGuidePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNewGuidePopView.h; sourceTree = "<group>"; };
+		F697A8D521073D64002F306E /* DYNewGuidePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNewGuidePopView.m; sourceTree = "<group>"; };
 		F6A86537208DD78F00A10959 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		F6A86538208DD78F00A10959 /* SocketRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocket.h; sourceTree = "<group>"; };
 		F6A8653A208DD78F00A10959 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
@@ -1323,6 +1338,7 @@
 		6039D3632089CB2000DC749F /* DataController */ = {
 			isa = PBXGroup;
 			children = (
+				F697A8C5210708AA002F306E /* 气泡说明框 */,
 				F6096E5620A317F9006354BA /* ResourceLoader */,
 				F6A86535208DD78F00A10959 /* DYWebSocketService */,
 				6039D3762089CB2000DC749F /* DYAppRootService */,
@@ -1604,6 +1620,8 @@
 		6039D4AE2089CB2100DC749F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F697A8D321073D64002F306E /* 新手引导 */,
+				F697A8CF21070B18002F306E /* DYPopview */,
 				2CEFD0DA209AD790003D8735 /* ScrollRepeatLable */,
 				2CEFD0D0209AB9E9003D8735 /* ArrowClickView */,
 				6039D4AF2089CB2100DC749F /* DYSubNavView */,
@@ -2091,6 +2109,37 @@
 			path = ResourceLoader;
 			sourceTree = "<group>";
 		};
+		F697A8C5210708AA002F306E /* 气泡说明框 */ = {
+			isa = PBXGroup;
+			children = (
+				F697A8C7210708AA002F306E /* DYExplainHelper.h */,
+				F697A8C6210708AA002F306E /* DYExplainHelper.m */,
+				F697A8C9210708F7002F306E /* DYExplainModel.h */,
+				F697A8CA210708F7002F306E /* DYExplainModel.m */,
+				F697A8CB210708F8002F306E /* DYExplainSubModel.h */,
+				F697A8CC210708F8002F306E /* DYExplainSubModel.m */,
+			);
+			path = "气泡说明框";
+			sourceTree = "<group>";
+		};
+		F697A8CF21070B18002F306E /* DYPopview */ = {
+			isa = PBXGroup;
+			children = (
+				F697A8D021070B18002F306E /* DYPopview.h */,
+				F697A8D121070B18002F306E /* DYPopview.m */,
+			);
+			path = DYPopview;
+			sourceTree = "<group>";
+		};
+		F697A8D321073D64002F306E /* 新手引导 */ = {
+			isa = PBXGroup;
+			children = (
+				F697A8D421073D64002F306E /* DYNewGuidePopView.h */,
+				F697A8D521073D64002F306E /* DYNewGuidePopView.m */,
+			);
+			path = "新手引导";
+			sourceTree = "<group>";
+		};
 		F6A86535208DD78F00A10959 /* DYWebSocketService */ = {
 			isa = PBXGroup;
 			children = (
@@ -2124,7 +2173,6 @@
 				6039CFD02089C4AE00DC749F /* Frameworks */,
 				6039CFD12089C4AE00DC749F /* Resources */,
 				00EA6D68BD9F6C6CB12AEFED /* [CP] Copy Pods Resources */,
-				01F541E48B849032DDF5EC07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2267,21 +2315,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YiChangDingPan/Pods-YiChangDingPan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		01F541E48B849032DDF5EC07 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YiChangDingPan/Pods-YiChangDingPan-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EB666E97E0FCA5609EDC574F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2297,7 +2330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2345,6 +2378,7 @@
 				6039D5482089CB2100DC749F /* UIViewController+Toast.m in Sources */,
 				6039D5382089CB2100DC749F /* DYStockTradeDetailModel.m in Sources */,
 				2CB3CD53209952E600AA849A /* DYMarketForecastPointModel.m in Sources */,
+				F697A8D621073D65002F306E /* DYNewGuidePopView.m in Sources */,
 				2C1F201220A0717300124322 /* DYTools+DeviceInfo.m in Sources */,
 				2CB3CD9F2099552B00AA849A /* DYChartBarView.m in Sources */,
 				2CB3CDA22099552B00AA849A /* DYChartItemViewFactory.m in Sources */,
@@ -2400,6 +2434,7 @@
 				2C2556D1208D771600291813 /* DYStareWizardSearchSelfStockController.m in Sources */,
 				6050872F2089E54900C9F8A0 /* DYYCInterface.m in Sources */,
 				605087062089E45300C9F8A0 /* DYPopViewCell.m in Sources */,
+				F697A8D221070B18002F306E /* DYPopview.m in Sources */,
 				BBD290282092BCC700596FAD /* UIResponder+Router.m in Sources */,
 				6039D3332089C9AE00DC749F /* SEDatabase.m in Sources */,
 				BB405DC0208EFE680002715D /* DYYCStocksMoveService.m in Sources */,
@@ -2411,6 +2446,7 @@
 				6039D5492089CB2100DC749F /* UIViewController+Loading.m in Sources */,
 				60CB4766208DCB9C0070517F /* DYSZ_SettingBaseViewCell.m in Sources */,
 				F6096E5920A3192F006354BA /* DYResourceLoader.m in Sources */,
+				F697A8CD210708F8002F306E /* DYExplainModel.m in Sources */,
 				2C255D702091D27E00291813 /* DYYC_PlateMoveService.m in Sources */,
 				2C25570C208D815400291813 /* DYStareMonitorStockEditViewController.m in Sources */,
 				6039CFDB2089C4AE00DC749F /* ViewController.m in Sources */,
@@ -2483,6 +2519,7 @@
 				F65B0EF220998E91001DCE4C /* DYSystemDataSource.m in Sources */,
 				2CB3CDA42099552B00AA849A /* DYKLineChartView.m in Sources */,
 				6039D5462089CB2100DC749F /* DYNetBlockModel.m in Sources */,
+				F697A8CE210708F8002F306E /* DYExplainSubModel.m in Sources */,
 				2CB3CDA32099552B00AA849A /* DYMaskView.m in Sources */,
 				2C255D742091D29200291813 /* DYYC_AreaShakeModel.m in Sources */,
 				2C2556D0208D771600291813 /* DYStareWizardHoldStockPageController.m in Sources */,
@@ -2494,6 +2531,7 @@
 				2CB3CD982099552B00AA849A /* DYTwoUnitsDataAdapter.m in Sources */,
 				2CB3CD962099552B00AA849A /* DYFiniaChartView.m in Sources */,
 				2CB3CDAB2099552B00AA849A /* DYMixedData1_2_XAdapter.m in Sources */,
+				F697A8C8210708AA002F306E /* DYExplainHelper.m in Sources */,
 				2C2556CE208D771600291813 /* DYStareWizardSearchViewController.m in Sources */,
 				6039D3412089C9AE00DC749F /* DYFameLayout.m in Sources */,
 				2C2556F8208D7E9800291813 /* DYPriceRulesViewController.m in Sources */,

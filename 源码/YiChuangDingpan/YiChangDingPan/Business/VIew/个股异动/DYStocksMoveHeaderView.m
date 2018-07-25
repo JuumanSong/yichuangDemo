@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *moveNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stockLabel;
 
-
 @end
 
 @implementation DYStocksMoveHeaderView

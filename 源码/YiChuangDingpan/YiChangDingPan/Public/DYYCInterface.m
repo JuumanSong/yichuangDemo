@@ -19,6 +19,9 @@
 #import "DYYC_PlateMoveEnterView.h"
 #import "DYYCStockHelper.h"
 
+#import "DYPriceRulesPageViewController.h"
+
+
 static DYYCInterface* instance = nil;
 
 @interface DYYCInterface()
@@ -162,6 +165,18 @@ static DYYCInterface* instance = nil;
         
     }];
 }
+
+-(UIViewController *)getRulesViewControllerWithTicker:(NSString *)ticker{
+    DYPriceRulesPageViewController *vc = [[DYPriceRulesPageViewController alloc] init];
+    if(ticker){
+        DYStockPropertyItem *item = [DYStockPropertyService getPropertyItemByTicker:@"600105"];
+        if(item && item.secId){
+            vc.secId = item.secId;
+        }
+    }
+    return vc;
+}
+
 
 //返回信号类型
 + (NSString *)getMsgBySct:(NSString *)sct bt:(NSString *)bt otherMsg:(NSString *)msg{

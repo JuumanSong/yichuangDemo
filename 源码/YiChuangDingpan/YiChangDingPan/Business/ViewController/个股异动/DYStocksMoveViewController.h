@@ -10,6 +10,8 @@
 
 @interface DYStocksMoveViewController : DYViewController
 
+@property(nonatomic,assign)BOOL showYin;
+
 // 搜索框调用方法
 
 - (void)searchStockDidSelectTradeCode:(NSString *)code;

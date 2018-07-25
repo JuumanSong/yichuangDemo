@@ -437,6 +437,16 @@
 		F600B92A20B2E64E00ECA391 /* NSString+StringFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F600B79020B2E64B00ECA391 /* NSString+StringFormat.m */; };
 		F600B92B20B2E64E00ECA391 /* NSString+NumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F600B79120B2E64B00ECA391 /* NSString+NumberFormat.m */; };
 		F600B92C20B2E64E00ECA391 /* NSString+StringFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = F600B79220B2E64B00ECA391 /* NSString+StringFormat.h */; };
+		F697A9012108129A002F306E /* DYNewGuidePopView.h in Headers */ = {isa = PBXBuildFile; fileRef = F697A8FF21081299002F306E /* DYNewGuidePopView.h */; };
+		F697A9022108129A002F306E /* DYNewGuidePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A90021081299002F306E /* DYNewGuidePopView.m */; };
+		F697A906210812B9002F306E /* DYPopview.h in Headers */ = {isa = PBXBuildFile; fileRef = F697A904210812B9002F306E /* DYPopview.h */; };
+		F697A907210812B9002F306E /* DYPopview.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A905210812B9002F306E /* DYPopview.m */; };
+		F697A90F210812E9002F306E /* DYExplainSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A909210812E9002F306E /* DYExplainSubModel.m */; };
+		F697A910210812E9002F306E /* DYExplainModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F697A90A210812E9002F306E /* DYExplainModel.h */; };
+		F697A911210812E9002F306E /* DYExplainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A90B210812E9002F306E /* DYExplainHelper.m */; };
+		F697A912210812E9002F306E /* DYExplainSubModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F697A90C210812E9002F306E /* DYExplainSubModel.h */; };
+		F697A913210812E9002F306E /* DYExplainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = F697A90D210812E9002F306E /* DYExplainHelper.h */; };
+		F697A914210812E9002F306E /* DYExplainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F697A90E210812E9002F306E /* DYExplainModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -877,6 +887,16 @@
 		F600B79020B2E64B00ECA391 /* NSString+StringFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringFormat.m"; sourceTree = "<group>"; };
 		F600B79120B2E64B00ECA391 /* NSString+NumberFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NumberFormat.m"; sourceTree = "<group>"; };
 		F600B79220B2E64B00ECA391 /* NSString+StringFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringFormat.h"; sourceTree = "<group>"; };
+		F697A8FF21081299002F306E /* DYNewGuidePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNewGuidePopView.h; sourceTree = "<group>"; };
+		F697A90021081299002F306E /* DYNewGuidePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNewGuidePopView.m; sourceTree = "<group>"; };
+		F697A904210812B9002F306E /* DYPopview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPopview.h; sourceTree = "<group>"; };
+		F697A905210812B9002F306E /* DYPopview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPopview.m; sourceTree = "<group>"; };
+		F697A909210812E9002F306E /* DYExplainSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYExplainSubModel.m; sourceTree = "<group>"; };
+		F697A90A210812E9002F306E /* DYExplainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYExplainModel.h; sourceTree = "<group>"; };
+		F697A90B210812E9002F306E /* DYExplainHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYExplainHelper.m; sourceTree = "<group>"; };
+		F697A90C210812E9002F306E /* DYExplainSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYExplainSubModel.h; sourceTree = "<group>"; };
+		F697A90D210812E9002F306E /* DYExplainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYExplainHelper.h; sourceTree = "<group>"; };
+		F697A90E210812E9002F306E /* DYExplainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYExplainModel.m; sourceTree = "<group>"; };
 		FE033C6C85244E651275368B /* Pods-YiChuangLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiChuangLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-YiChuangLibrary/Pods-YiChuangLibrary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1496,6 +1516,7 @@
 		F600B65720B2E64B00ECA391 /* DataController */ = {
 			isa = PBXGroup;
 			children = (
+				F697A908210812E9002F306E /* 气泡说明框 */,
 				F600B65820B2E64B00ECA391 /* DYAppRootService */,
 				F600B65B20B2E64B00ECA391 /* 对时 */,
 				F600B66020B2E64B00ECA391 /* BaseUrlService */,
@@ -1872,6 +1893,8 @@
 		F600B6DC20B2E64B00ECA391 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F697A903210812B9002F306E /* DYPopview */,
+				F697A8FE21081299002F306E /* 新手引导 */,
 				F600B6DD20B2E64B00ECA391 /* DYSubNavView */,
 				F600B6E420B2E64B00ECA391 /* TableView */,
 				F600B6EF20B2E64B00ECA391 /* DYNavView */,
@@ -2282,6 +2305,37 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		F697A8FE21081299002F306E /* 新手引导 */ = {
+			isa = PBXGroup;
+			children = (
+				F697A8FF21081299002F306E /* DYNewGuidePopView.h */,
+				F697A90021081299002F306E /* DYNewGuidePopView.m */,
+			);
+			path = "新手引导";
+			sourceTree = "<group>";
+		};
+		F697A903210812B9002F306E /* DYPopview */ = {
+			isa = PBXGroup;
+			children = (
+				F697A904210812B9002F306E /* DYPopview.h */,
+				F697A905210812B9002F306E /* DYPopview.m */,
+			);
+			path = DYPopview;
+			sourceTree = "<group>";
+		};
+		F697A908210812E9002F306E /* 气泡说明框 */ = {
+			isa = PBXGroup;
+			children = (
+				F697A909210812E9002F306E /* DYExplainSubModel.m */,
+				F697A90A210812E9002F306E /* DYExplainModel.h */,
+				F697A90B210812E9002F306E /* DYExplainHelper.m */,
+				F697A90C210812E9002F306E /* DYExplainSubModel.h */,
+				F697A90D210812E9002F306E /* DYExplainHelper.h */,
+				F697A90E210812E9002F306E /* DYExplainModel.m */,
+			);
+			path = "气泡说明框";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -2358,6 +2412,7 @@
 				F600B84D20B2E64C00ECA391 /* DYWebSocketService.h in Headers */,
 				F600B7B020B2E64B00ECA391 /* DYStareOptionalMonitorSetModel.h in Headers */,
 				F600B84B20B2E64C00ECA391 /* SocketRocket.h in Headers */,
+				F697A910210812E9002F306E /* DYExplainModel.h in Headers */,
 				F600B8CF20B2E64D00ECA391 /* DYMixedDataWithNoUnitsAdapter.h in Headers */,
 				F600B8FD20B2E64D00ECA391 /* DYHotChartView.h in Headers */,
 				F600B7F020B2E64C00ECA391 /* DYStareMonitorStockEditCell.h in Headers */,
@@ -2380,6 +2435,7 @@
 				F600B90020B2E64D00ECA391 /* DYTwoUnitsDataAdapter.h in Headers */,
 				F600B82020B2E64C00ECA391 /* DYStareWizardSearchDelegate.h in Headers */,
 				F600B79A20B2E64B00ECA391 /* DYYCIndustryListService.h in Headers */,
+				F697A906210812B9002F306E /* DYPopview.h in Headers */,
 				F600B83420B2E64C00ECA391 /* DYAppRootService.h in Headers */,
 				F600B7A620B2E64B00ECA391 /* DYStareWizardStockInfoModel.h in Headers */,
 				F600B84F20B2E64C00ECA391 /* DYBaseInterface.h in Headers */,
@@ -2444,11 +2500,14 @@
 				F600B81A20B2E64C00ECA391 /* DYMessageTypeViewController.h in Headers */,
 				F600B7DB20B2E64C00ECA391 /* DYSegmentView.h in Headers */,
 				F600B87120B2E64C00ECA391 /* DYDataSourceService.h in Headers */,
+				F697A913210812E9002F306E /* DYExplainHelper.h in Headers */,
 				F600B7AB20B2E64B00ECA391 /* DYYCNewMsgsModel.h in Headers */,
+				F697A912210812E9002F306E /* DYExplainSubModel.h in Headers */,
 				F600B91620B2E64D00ECA391 /* DYCalculateAttrilabelHeight.h in Headers */,
 				F600B79820B2E64B00ECA391 /* DYAdvancedSetService.h in Headers */,
 				F600B84320B2E64C00ECA391 /* DYBaseCacheData.h in Headers */,
 				F600B7BB20B2E64B00ECA391 /* DYYiChuangHomeSearchView.h in Headers */,
+				F697A9012108129A002F306E /* DYNewGuidePopView.h in Headers */,
 				F600B8BB20B2E64D00ECA391 /* JMCacheUtil.h in Headers */,
 				F600B8C220B2E64D00ECA391 /* DYTextInsetsLabel.h in Headers */,
 				F600B91320B2E64D00ECA391 /* DYToastUtil.h in Headers */,
@@ -2778,6 +2837,7 @@
 				F600B8E120B2E64D00ECA391 /* DYFixedCentralLineDataAdapter.m in Sources */,
 				F600B8A120B2E64D00ECA391 /* DYGifFreshHeader.m in Sources */,
 				F600B81D20B2E64C00ECA391 /* DYStareWizardSearchHistoryController.m in Sources */,
+				F697A914210812E9002F306E /* DYExplainModel.m in Sources */,
 				F600B7FC20B2E64C00ECA391 /* DYSZ_PriceRuleViewCell.m in Sources */,
 				F600B81920B2E64C00ECA391 /* DYMessageTypeViewController.m in Sources */,
 				F600B90F20B2E64D00ECA391 /* DYTools.m in Sources */,
@@ -2790,6 +2850,7 @@
 				F600B8BA20B2E64D00ECA391 /* DYYCInterface.m in Sources */,
 				F600B82C20B2E64C00ECA391 /* DYStockCardViewController.m in Sources */,
 				F600B86820B2E64C00ECA391 /* DYStockPropertyService.m in Sources */,
+				F697A907210812B9002F306E /* DYPopview.m in Sources */,
 				F600B89220B2E64D00ECA391 /* DYPageRootViewController.m in Sources */,
 				F600B7FD20B2E64C00ECA391 /* DYSZ_MultiDaysViewCell.m in Sources */,
 				F600B79C20B2E64B00ECA391 /* DYYCIndustryListService.m in Sources */,
@@ -2808,6 +2869,7 @@
 				F600B80A20B2E64C00ECA391 /* DYSZ_BigDealViewCell.m in Sources */,
 				F600B7A520B2E64B00ECA391 /* DYStareWizardStockInfoModel.m in Sources */,
 				F600B86120B2E64C00ECA391 /* DYFlowOFStockModel.m in Sources */,
+				F697A90F210812E9002F306E /* DYExplainSubModel.m in Sources */,
 				F600B8EB20B2E64D00ECA391 /* DYMixedDataWithNoUnitsAdapter.m in Sources */,
 				F600B7A220B2E64B00ECA391 /* DYStareOptionalMonitorSetService.m in Sources */,
 				F600B91220B2E64D00ECA391 /* DYToastUtil.m in Sources */,
@@ -2815,6 +2877,7 @@
 				F600B91520B2E64D00ECA391 /* DYCalculateAttrilabelHeight.m in Sources */,
 				F600B8A920B2E64D00ECA391 /* DYScrollRepeatLable.m in Sources */,
 				F600B85520B2E64C00ECA391 /* DYStockKLineModel.m in Sources */,
+				F697A9022108129A002F306E /* DYNewGuidePopView.m in Sources */,
 				F600B7A020B2E64B00ECA391 /* DYYC_PlateMoveService.m in Sources */,
 				F600B84820B2E64C00ECA391 /* DYBaseCacheData.m in Sources */,
 				F600B7ED20B2E64C00ECA391 /* DYStareMonitorStockEditHeaderView.m in Sources */,
@@ -2858,6 +2921,7 @@
 				F600B8C320B2E64D00ECA391 /* NSObject+Representation.m in Sources */,
 				F600B7F220B2E64C00ECA391 /* DYStareMonitorStockEditBottomView.m in Sources */,
 				F600B8EC20B2E64D00ECA391 /* DYChartCurveView.m in Sources */,
+				F697A911210812E9002F306E /* DYExplainHelper.m in Sources */,
 				F600B8DA20B2E64D00ECA391 /* DYDataAdapterFactory.m in Sources */,
 				F600B92320B2E64D00ECA391 /* NSString+JsonValue.m in Sources */,
 				F600B92520B2E64D00ECA391 /* NSString+AvailbleExtension.m in Sources */,

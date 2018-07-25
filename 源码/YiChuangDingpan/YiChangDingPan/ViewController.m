@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "DYYC_PlateMoveEnterView.h"
 #import "DYYCStockBarIndexView.h"
+#import "DYPriceRulesPageViewController.h"
+#import "DYStockPropertyService.h"
+
 @interface ViewController ()
 @property (nonatomic, strong) UIView *v1;
 @property (nonatomic, strong) UIView *v2;
@@ -20,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 280, DYScreenWidth, 35)];
+    [btn1 setBackgroundColor:[UIColor redColor]];
+    [btn1 addTarget:self action:@selector(push11) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
     
     self.v1 =  [[DYYCInterface shareInstance]dyStocksStareBarViewWithPushBlock:^(id data) {
         UIViewController *vc =[[DYYCInterface shareInstance]dyStareStockVC:1];
@@ -34,7 +41,8 @@
     }];
     self.v2.frame = CGRectMake(0, 150, DYScreenWidth, 35);
     [self.view addSubview:self.v2];
- 
+    
+    
 }
 
 
@@ -55,6 +63,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)push11{
+    UIViewController *vc = [[DYYCInterface shareInstance] getRulesViewControllerWithTicker:@"600105"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -21,6 +21,9 @@
 #import "DYPriceRulesPageViewController.h"
 #import "DYYC_SiftStock.h"
 #import "DYProgressHUD.h"
+#import "DYExplainHelper.h"
+
+
 @interface DYMessageTypeViewController ()<UITableViewDelegate,UITableViewDataSource,DYSZ_MessageTypeHeadViewDelegate>
 @property(nonatomic,strong)UITableView * myTableView;
 @property(nonatomic,strong)DYSZ_PriceRuleViewCell * priceRuleViewCell;
@@ -239,13 +242,15 @@
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     NSArray * arr =@[@"到价提醒",@"价格异动",@"主力大单",@"技术信号",@"涨跌停",@"相似K线",@"盘后监控",@"重要公告"];
+    NSArray * arr2 =@[@1,@2,@2,@2,@2,@2,@2,@0];
     DYSZ_MessageTypeHeadView * headerView =[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DYSZ_MessageTypeHeadView"];
     headerView.messageTypeHeadViewDelegate=self;
-    [headerView setSection:section];
+    [headerView setSection:section withType:[arr2[section] integerValue]];
     [headerView setHeaderText:arr[section]];
     [headerView setSwitchIsOnWithBt:_settingModel.modelArray[section].bt];
     return headerView;
 }
+
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     WS(weakSelf);
@@ -364,4 +369,72 @@
     DYPriceRulesPageViewController * vc =[[DYPriceRulesPageViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)clickInfoBtnWithSection:(NSInteger)section btn:(UIButton *)btn{
+    DYExplainHelper *helper = [[DYExplainHelper alloc]init];
+    DYExplainModel *model = [self modelWithSection:section];
+    [helper showAtView:btn dirct:NO withModel:model];
+}
+
+
+-(DYExplainModel *)modelWithSection:(NSInteger)section{
+    DYExplainModel *model = [[DYExplainModel alloc]init];
+    
+    NSArray *keys;
+    NSArray *values;
+    
+    switch (section) {
+        case 1:{
+            model.title = @"价格异动";
+             keys = @[@"快速拉升：",@"火箭发射：",@"快速下跌：",@"直线暴跌："];
+             values = @[@"个股5分钟涨速达到3%",@"个股5分钟涨速达到5%",@"个股5分钟跌速达到3%",@"个股5分钟跌速达到5%"];
+        }
+            break;
+        case 2:{
+            model.title = @"主力大单";
+            model.content = @"单笔成交金额达到500万";
+        }
+            break;
+        case 3:{
+            model.title = @"技术信号";
+            keys = @[@"KDJ金叉：",@"KDJ死叉：",@"MACD金叉：",@"MACD死叉：",@"突破上轨：",@"突破5日均线：",@"Boll开口变大："];
+            values = @[@"KDJ指标出现金叉，K线突破D线",@"KDJ指标发生死叉，K线下穿D线",@"MACD指标发生金叉，短期均线DIF突破长期均线DEA",@"MACD指标发生死叉，短期均线DIF下穿长期均线DEA",@"Boll指标盘中突破上轨,上涨信号",@"股价突破5日均线",@"上涨趋势中BOLL线开头变大，上涨信号"];
+        }
+            break;
+        case 4:{
+            model.title = @"涨跌停";
+            keys = @[@"封板量下降："];
+            values = @[@"涨跌停之后，封板量持续下降，比最高封板量下降80%，开板概率较高"];
+        }
+            break;
+        case 5:{
+            model.title = @"相似K线";
+            model.content = @"对于相似度80%以上的个股，未来20日预期收益率达到15%以上";
+        }
+            break;
+        case 6:{
+            model.title = @"盘后监控";
+            model.content = @"针对特别关注个股形成一份盘后监控总结，在收盘之后一次推送";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    for (NSInteger i =0; i<keys.count; i++) {
+        NSString *keystr = keys[i];
+        NSString *valueStr = values[i];
+        DYExplainSubModel *subModel = [[DYExplainSubModel alloc] init];
+        subModel.keyStr = keystr;
+        subModel.valueStr = valueStr;
+        [array addObject:subModel];
+    }
+    model.itemsArray = [array copy];
+    
+    return model;
+}
+
+
 @end

@@ -10,4 +10,6 @@
 
 @interface DYStocksMoveHeaderView : UIView
 
+@property (weak, nonatomic) IBOutlet UIView *tmp;
+
 @end

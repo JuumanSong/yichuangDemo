@@ -54,9 +54,7 @@
     
     _settingBtn =[UIButton buttonWithType:UIButtonTypeCustom];
     _settingBtn.dy_EnlargeRect = UIEdgeInsetsMake(0, 0, -16, -16);
-    [_settingBtn setImage:DY_ImgLoader(@"YC_set", @"YiChuangLibrary") forState:UIControlStateNormal];
     _settingBtn.hidden=YES;
-    [_settingBtn addTarget:self action:@selector(settingButton) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_settingBtn];
     [_settingBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -82,6 +80,13 @@
         [self.messageTypeHeadViewDelegate clickSettingBtn];
     }
 }
+
+-(void)infoButtonClicked{
+    if (self.messageTypeHeadViewDelegate&&[self.messageTypeHeadViewDelegate respondsToSelector:@selector(clickInfoBtnWithSection:btn:)]) {
+        [self.messageTypeHeadViewDelegate clickInfoBtnWithSection:_section btn:_settingBtn];
+    }
+}
+
 - (void)setHeaderText:(NSString *)text {
     self.headerLabel.text = text.length == 0 ? @"暂无" : text;
 }
@@ -96,14 +101,22 @@
     }
    
 }
--(void)setSection:(NSInteger)section{
+-(void)setSection:(NSInteger)section withType:(NSInteger)type{
     
-    
-    if (section) {
-        _settingBtn.hidden=YES;
-    }else{
-        
+    if (type == 2) {
         _settingBtn.hidden=NO;
+        [_settingBtn setImage:DY_ImgLoader(@"forecast_explain", @"YiChuangLibrary") forState:UIControlStateNormal];
+        [_settingBtn removeTarget:self action:@selector(settingButton) forControlEvents:UIControlEventTouchUpInside];
+        [_settingBtn addTarget:self action:@selector(infoButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else if(type == 1){
+        _settingBtn.hidden=NO;
+        [_settingBtn setImage:DY_ImgLoader(@"YC_set", @"YiChuangLibrary") forState:UIControlStateNormal];
+        [_settingBtn removeTarget:self action:@selector(infoButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [_settingBtn addTarget:self action:@selector(settingButton) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else{
+        _settingBtn.hidden=YES;
     }
     _section =section;
 }

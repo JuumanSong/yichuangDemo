@@ -19,6 +19,9 @@
 #import "DYWebSocketService.h"
 #import "DYYC_SiftStock.h"
 #import "DYYCTipViewCell.h"
+#import "DYNewGuidePopView.h"
+#import "DYStockCardViewController.h"
+
 @interface DYStocksMoveViewController ()<DYPopHeaderViewDataSource,DYPopHeaderViewDelegate,UITableViewDelegate,UITableViewDataSource,DYWebSocketTargetDelegate,DYYCInterfaceDelegate>
 
 
@@ -33,6 +36,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSTimer * myTimer;
 @property (nonatomic) BOOL isfirstTimeLoad;
+@property (nonatomic,strong) DYStocksMoveHeaderView *stocksMoveHeaderView;
 
 @end
 
@@ -61,10 +65,69 @@
 //    if (_searchStockId) return;
     [self requestSettingDataList];
 }
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    WS(weakSelf);
+    
+    NSString *data = loadFromCacheWithType(@"UserCache/YIDONG/FirstShow", JMDataTypeEnumString);
+    if(!data){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if(weakSelf.showYin){
+                [weakSelf showGuidePopView:0];
+                saveToCacheWithType(@"UserCache/YIDONG/FirstShow", @"1", JMDataTypeEnumString);
+            }
+            else{
+                weakSelf.showYin = YES;
+            }
+        });
+    }
+}
+
+-(void)showGuidePopView:(NSInteger)index{
+    if(index == 0){
+        NSArray *arr = self.comBoBoxView.dropDownBoxArray;
+        if(arr.count>=4){
+            DYDropDownBox *box1 = arr[2];
+            DYNewGuidePopView *popView = [[DYNewGuidePopView alloc]initWithSender:box1 withDirection:1];
+            [popView setContentText:@"自定义纳入监控的股票范围、行业板块，信号类型，个性化偏好设置～"];
+            WS(weakSelf);
+            [popView completeBlock:^(id data) {
+                [weakSelf showGuidePopView:1];
+            }];
+            [popView showView];
+        }
+    }
+    else if(index == 1){
+        NSArray *arr = self.comBoBoxView.dropDownBoxArray;
+        if(arr.count>=4){
+            DYDropDownBox *box1 = arr[3];
+            DYNewGuidePopView *popView = [[DYNewGuidePopView alloc]initWithSender:box1 withDirection:1];
+            [popView setContentText:@"添加特别关注股票，一有异动即可进行APP消息推送；订阅更多信号类型，个性化推送～"];
+            WS(weakSelf);
+            [popView completeBlock:^(id data) {
+                [weakSelf showGuidePopView:2];
+            }];
+            [popView showView];
+        }
+    }
+    else if(index == 2){
+        DYNewGuidePopView *popView = [[DYNewGuidePopView alloc]initWithSender:self.stocksMoveHeaderView.tmp withDirection:1];
+        [popView setContentText:@"异动值跟具体信号相关，可能是涨跌幅，成交量等～"];
+        [popView showView];
+    }
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     _isfirstTimeLoad = YES;
+    
+    self.stocksMoveHeaderView = [[DY_BundleLoader(@"YiChuangLibrary") loadNibNamed:@"DYStocksMoveHeaderView" owner:nil options:nil]lastObject];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestSettingDataList) name:@"selectSetingNote" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(Push_DYStareMonitorStockEditViewController) name:@"Push_DYStareMonitorStockEditViewController" object:nil];
     //建立长链接
@@ -254,7 +317,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    return [[DY_BundleLoader(@"YiChuangLibrary") loadNibNamed:@"DYStocksMoveHeaderView" owner:nil options:nil]lastObject];
+    return self.stocksMoveHeaderView ;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
