@@ -66,7 +66,7 @@
 }
 
 -(void)push11{
-    UIViewController *vc = [[DYYCInterface shareInstance] getRulesViewControllerWithTicker:@"600105"];
+    UIViewController *vc = [[DYYCInterface shareInstance] getRulesViewControllerWithTicker:@"600004"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

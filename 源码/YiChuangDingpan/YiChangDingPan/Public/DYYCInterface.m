@@ -169,7 +169,7 @@ static DYYCInterface* instance = nil;
 -(UIViewController *)getRulesViewControllerWithTicker:(NSString *)ticker{
     DYPriceRulesPageViewController *vc = [[DYPriceRulesPageViewController alloc] init];
     if(ticker){
-        DYStockPropertyItem *item = [DYStockPropertyService getPropertyItemByTicker:@"600105"];
+        DYStockPropertyItem *item = [DYStockPropertyService getPropertyItemByTicker:ticker];
         if(item && item.secId){
             vc.secId = item.secId;
         }
