@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DYYCStockBarIndexView : UIControl
-@property (nonatomic, strong) UIImageView *imgView;
+//@property (nonatomic, strong) UIImageView *imgView;
 @property (nonatomic, strong) UIImageView *rightImgView;
+
+@property (nonatomic, strong) UIView *nameLabelBack;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UILabel *content1Label;//个股名称

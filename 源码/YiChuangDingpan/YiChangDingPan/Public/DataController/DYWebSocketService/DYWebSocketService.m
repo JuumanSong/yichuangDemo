@@ -8,6 +8,7 @@
 
 #import "DYWebSocketService.h"
 #import "SRWebSocket.h"
+#import "DYProgressHUD.h"
 
 #define dy_async_safe(block)\
 if ([NSThread isMainThread]) {\
@@ -85,8 +86,15 @@ static DYWebSocketService* webSocketService = nil;
     
     webSocket = [[SRWebSocket alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@ws?user=%@&token=%@&opUser=%@", self.khost,deviceId,token,userId]]];
 
-//    测试用
-//    webSocket = [[SRWebSocket alloc]initWithURL:[NSURL URLWithString:@"ws://10.20.251.139:3001"]];
+#ifdef DEBUG
+    //debug下长链接参数异常会弹框
+    if([deviceId isEqualToString:@""]||[token isEqualToString:@""]){
+        UIApplication *app = [UIApplication sharedApplication];
+        if ([app.delegate respondsToSelector:@selector(window)]){
+            [DYProgressHUD showTextHUDAddTo:[app.delegate window] withDetails:[NSString stringWithFormat:@"debug长链接：\nws?user=%@&token=%@&opUser=%@", deviceId,token,userId]];
+        }
+    }
+#endif
     
     webSocket.delegate = self;
     //  设置代理线程queue

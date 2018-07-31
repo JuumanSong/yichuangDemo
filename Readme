@@ -105,5 +105,13 @@ viewWillDisappear：
 6.返回监控落地页1:个股异动 2.板块异动
 - (UIViewController *)dyStareStockVC:(NSInteger)tag;
 
+7.返回到价提醒页，参数：ticker：@"600105",不指定传nil
+-(UIViewController *)getRulesViewControllerWithTicker:(NSString *)ticker;
+
+8.返回信号类型,盘后多日需要传nt字段
++ (NSString *)getMsgBySct:(NSString *)sct bt:(NSString *)bt otherMsg:(NSString *)msg;
 
 
+注：
+上传到appstore时，可能需要remove x86_64
+lipo -remove x86_64 YiChuangLibrary.framework/YiChuangLibrary -o YiChuangLibrary.framework/YiChuangLibrary

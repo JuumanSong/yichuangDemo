@@ -30,8 +30,11 @@
     self = [super initWithFrame:rect];
     if (self) {
         self.backgroundColor = DYAppearanceColor(@"W1", 1);
-        _imgView = [[UIImageView alloc]initWithImage:DY_ImgLoader(@"yd_header", @"YiChuangLibrary")];
-        [self addSubview:_imgView];
+        
+        _nameLabelBack = [[UIView alloc] init];
+        _nameLabelBack.backgroundColor = DYAppearanceColorFromHex(0x67B1F8, 1);
+        [self addSubview:_nameLabelBack];
+        
         _rightImgView = [[UIImageView alloc]initWithImage:DY_ImgLoader(@"stare_price_next", @"YiChuangLibrary")];
         [self addSubview:_rightImgView];
         
@@ -40,7 +43,7 @@
             font = DYAppearanceFont(@"T0");
         }
         _nameLabel = [[UILabel alloc]init];
-        _nameLabel.textColor = DYAppearanceColor(@"H9", 1);
+        _nameLabel.textColor = DYAppearanceColor(@"W1", 1);
         _nameLabel.font = DYAppearanceBoldFont(@"T1");
         _nameLabel.text = @"个股异动";
         [self addSubview:_nameLabel];
@@ -89,10 +92,20 @@
     CGSize size = self.bounds.size;
     CGFloat h = size.height;
     CGFloat w = size.width;
-    _imgView.frame = CGRectMake(10, (h-26)/2, 27, 26);
+    
+    
     _rightImgView.frame = CGRectMake(w - 25, (h-12)/2, 12, 12);
-    _nameLabel.frame = CGRectMake(CGRectGetMaxX(_imgView.frame)+5, 0, 55, h);
-    _timeLabel.frame = CGRectMake(CGRectGetMaxX(_nameLabel.frame)+8, 0,45, h);
+    
+    _nameLabelBack.frame =  CGRectMake(0, 5, 65, h-10);
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_nameLabelBack.bounds byRoundingCorners:UIRectCornerBottomRight|UIRectCornerTopRight cornerRadii:CGSizeMake((h-10)/2, (h-10)/2)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = _nameLabelBack.bounds;
+    maskLayer.path = maskPath.CGPath;
+    _nameLabelBack.layer.mask = maskLayer;
+    
+    
+    _nameLabel.frame = CGRectMake(5, 0, 55, h);
+    _timeLabel.frame = CGRectMake(CGRectGetMaxX(_nameLabel.frame)+15, 0,45, h);
 
     CGFloat contentW = (w - CGRectGetMaxX(_timeLabel.frame)-23)/3;
     _content1Label.frame = CGRectMake(CGRectGetMaxX(_timeLabel.frame), 0, contentW, h);
