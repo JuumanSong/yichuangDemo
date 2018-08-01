@@ -15,7 +15,7 @@
     if (indexPath.row ==0) {
         return DYAppearanceColor(@"B14", 1);
     }
-    return DYAppearanceColorFromHex(YC_Y1, 1);
+    return DYAppearanceColorFromHex(0x4690EC, 1);
 }
 
 - (UIColor*)fillColorInChartView:(DYKLineChartView*)chartView

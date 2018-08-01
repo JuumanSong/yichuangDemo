@@ -165,11 +165,11 @@
 }
 //选中的颜色
 - (UIColor *)selectedLabelColorWithView:(UIView *)view {
-    return DYAppearanceColorFromHex(0xCEA76E, 1);
+    return DYAppearanceColorFromHex(0xffffff, 1);
 }
 //未选中的颜色
 - (UIColor *)nomalLabelColorWithView:(UIView *)view {
-    return DYAppearanceColor(@"W1", 0.7);
+     return DYAppearanceColorFromHex(0x999999, 1);
 }
 
 //未选中的字体

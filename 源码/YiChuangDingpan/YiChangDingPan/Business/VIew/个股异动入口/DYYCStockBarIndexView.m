@@ -50,14 +50,14 @@
         _nameLabel.backgroundColor = [UIColor clearColor];
         
         _timeLabel = [[UILabel alloc]init];
-        _timeLabel.textColor = DYAppearanceColor(@"R3", 1);
+        _timeLabel.textColor = DYAppearanceColor(@"H9", 1);
         _timeLabel.font = font;
         _timeLabel.text = @"--";
         [self addSubview:_timeLabel];
         _timeLabel.backgroundColor = [UIColor clearColor];
         
         _content1Label = [[UILabel alloc]init];
-        _content1Label.textColor = DYAppearanceColor(@"R3", 1);
+        _content1Label.textColor = DYAppearanceColor(@"H9", 1);
         _content1Label.font = font;
         _content1Label.text = @"--";
         _content1Label.textAlignment = NSTextAlignmentCenter;
@@ -65,7 +65,7 @@
         _content1Label.backgroundColor = [UIColor clearColor];
         
         _content2Label = [[UILabel alloc]init];
-        _content2Label.textColor = DYAppearanceColor(@"R3", 1);
+        _content2Label.textColor = DYAppearanceColor(@"H9", 1);
         _content2Label.font = font;
         _content2Label.text = @"--";
         _content2Label.textAlignment = NSTextAlignmentCenter;
@@ -73,14 +73,12 @@
         _content2Label.backgroundColor = [UIColor clearColor];
         
         _content3Label = [[UILabel alloc]init];
-        _content3Label.textColor = DYAppearanceColor(@"R3", 1);
+        _content3Label.textColor = DYAppearanceColor(@"H9", 1);
         _content3Label.font = font;
         _content3Label.text = @"--";
         _content3Label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_content3Label];
         _content3Label.backgroundColor = [UIColor clearColor];
-//        //首先调用一次短链接
-//        [self requestSettingDataList];
     }
     return self;
 }
@@ -132,10 +130,7 @@
     if (NilToEmptyDictionary(dic)) {
         dispatch_async(dispatch_get_main_queue(), ^{
             DYYCNewMsgsDataModel *model =[DYYCNewMsgsDataModel yy_modelWithJSON:message];
-            self.timeLabel.text = [DYTimeTransformUtil translateToHHMMWithTime:[model.ts doubleValue]/1000];
-            self.content1Label.text = model.sn;
-            self.content2Label.text = model.moveMsg;
-            self.content3Label.text = model.value;
+            [self setViewWithModel:model];
         });
     }
 }
@@ -148,10 +143,7 @@
     [[DYYCStocksMoveService shareInstance] loadNewMsgsDataOfStockId:nil isUp:YES success:^(id data,BOOL isMore) {
         if ([data isKindOfClass:[NSArray class]] && [(NSArray *)data count]>0) {
             DYYCNewMsgsModel * model =[(NSArray*)data firstObject];
-            weakSelf.timeLabel.text = [DYTimeTransformUtil translateToHHMMWithTime:[model.dataModel.ts doubleValue]/1000];
-            weakSelf.content1Label.text = model.dataModel.sn;
-            weakSelf.content2Label.text = model.dataModel.moveMsg;
-            weakSelf.content3Label.text = model.dataModel.value;
+            [weakSelf setViewWithModel:model.dataModel];
         }
         else{
             weakSelf.nameLabel.text = @"个股异动";
@@ -159,6 +151,10 @@
             weakSelf.content1Label.text = @"--";
             weakSelf.content2Label.text = @"--";
             weakSelf.content3Label.text = @"--";
+            weakSelf.timeLabel.textColor = DYAppearanceColor(@"H9", 1);
+            weakSelf.content1Label.textColor = DYAppearanceColor(@"H9", 1);
+            weakSelf.content2Label.textColor = DYAppearanceColor(@"H9", 1);
+            weakSelf.content3Label.textColor = DYAppearanceColor(@"H9", 1);
         }
         
     } fail:^(id data) {
@@ -167,5 +163,31 @@
     }];
 }
 
+
+-(void)setViewWithModel:(DYYCNewMsgsDataModel *)dataModel{
+    self.timeLabel.text = [DYTimeTransformUtil translateToHHMMWithTime:[dataModel.ts doubleValue]/1000];
+    self.content1Label.text = dataModel.sn;
+    self.content2Label.text = dataModel.moveMsg;
+    self.content3Label.text = dataModel.value;
+    NSString *f = dataModel.f;
+    if([@"1" isEqualToString: f]){
+        self.timeLabel.textColor = DYAppearanceColor(@"R3", 1);
+        self.content1Label.textColor = DYAppearanceColor(@"R3", 1);
+        self.content2Label.textColor = DYAppearanceColor(@"R3", 1);
+        self.content3Label.textColor = DYAppearanceColor(@"R3", 1);
+    }
+    else if([@"-1" isEqualToString: f]){
+        self.timeLabel.textColor = DYAppearanceColor(@"G1", 1);
+        self.content1Label.textColor = DYAppearanceColor(@"G1", 1);
+        self.content2Label.textColor = DYAppearanceColor(@"G1", 1);
+        self.content3Label.textColor = DYAppearanceColor(@"G1", 1);
+    }
+    else{
+        self.timeLabel.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
+        self.content1Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
+        self.content2Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
+        self.content3Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
+    }
+}
 
 @end

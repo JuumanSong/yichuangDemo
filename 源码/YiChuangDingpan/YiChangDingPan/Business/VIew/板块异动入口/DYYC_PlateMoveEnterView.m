@@ -53,20 +53,20 @@
         [self addSubview:_nameLabel];
         
         _timeLabel = [[UILabel alloc]init];
-        _timeLabel.textColor = DYAppearanceColor(@"R3", 1);
+        _timeLabel.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
         _timeLabel.font = font;
         _timeLabel.text = @"--";
         [self addSubview:_timeLabel];
         
         _content1Label = [[UILabel alloc]init];
-        _content1Label.textColor = DYAppearanceColor(@"R3", 1);
+        _content1Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
         _content1Label.font = font;
         _content1Label.text = @"--";
         _content1Label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_content1Label];
         
         _content2Label = [[UILabel alloc]init];
-        _content2Label.textColor = DYAppearanceColor(@"R3", 1);
+        _content2Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
         _content2Label.font = font;
         _content2Label.text = @"--";
         _content2Label.textAlignment = NSTextAlignmentCenter;
