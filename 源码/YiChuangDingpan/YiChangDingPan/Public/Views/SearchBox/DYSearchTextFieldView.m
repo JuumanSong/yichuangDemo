@@ -111,7 +111,10 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (self.returnBlock) {
-        self.returnBlock(textField.text);
+        self.returnBlock(textField);
+    }
+    else{
+        [textField resignFirstResponder];
     }
     return YES;
 }
@@ -161,4 +164,5 @@
     self.returnBlock = returnBlock;
     self.beginEditBlock = beginEditBlock;
 }
+
 @end

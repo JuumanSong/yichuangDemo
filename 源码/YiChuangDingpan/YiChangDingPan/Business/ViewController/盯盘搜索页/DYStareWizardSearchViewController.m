@@ -15,7 +15,7 @@
 #import "DYStareWizardSearchHistoryController.h"
 #import "DYStareWizardHoldStockPageController.h"
 
-@interface DYStareWizardSearchViewController ()
+@interface DYStareWizardSearchViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong) DYSearchView *searchView;
 @property (nonatomic, strong) DYStareWizardHoldStockPageController *holdPageVC;
 @property (nonatomic, strong) DYStareWizardSearchHistoryController *historyVC;
@@ -86,6 +86,7 @@
     self.searchView.backgroundColor = DYAppearanceColor(@"H18", 1);
     [self.searchView.rightBtn setTitleColor:DYAppearanceColor(@"W1", 1) forState:UIControlStateNormal];
     [self.searchView.tfView reloadTextFieldImageView:YES];
+    [self.searchView.tfView.textField setReturnKeyType:UIReturnKeyDone];
     //搜索相关
     WS(weakSelf)
     [self.searchView.tfView setPlaceHolder:@"请输入股票代码/名称/首字母"];
@@ -93,6 +94,8 @@
         NSString *text = (NSString *)data;
         [weakSelf fetchSeachInfo:text];
     } withReturnBlock:^(id data) {
+        UITextField *textf = data;
+        [textf resignFirstResponder];
     } andBeginEditBlock:^{
         [weakSelf bringToFrontHistory];
     }];
