@@ -28,5 +28,7 @@
 
 - (void)setEditModel:(DYStareWizardPriceRuleModel *)model;
 
+- (void)reload;
+
 @end
 

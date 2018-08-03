@@ -42,3 +42,4 @@ framework封装，Demo实现，对接文档完成
 
 2018.8.3
 修复键盘挡住bug
+跳转到价提醒页面带ticker存在创建失败bug

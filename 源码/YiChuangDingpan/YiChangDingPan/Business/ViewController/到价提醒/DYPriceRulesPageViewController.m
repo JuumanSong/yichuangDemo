@@ -38,8 +38,12 @@
     self.dyNavTitleView.backgroundColor = DYAppearanceColor(@"H18", 1);
     [self.dyNavTitleView setNavBlackStyle];
     self.service = [[DYPriceRulesService alloc]init];
+    WS(weakSelf);
     [self.service getStareWizardPriceRulesWithResultBlock:^(id data) {
-        
+        if (weakSelf.secId) {
+            [weakSelf.service rePlaceChooseStockCode:self.secId];
+        }
+        [weakSelf.priceVC reload];
     }];
     if (self.secId) {
         [self.service rePlaceChooseStockCode:self.secId];
@@ -58,7 +62,7 @@
     self.priceVC = [[DYPriceRulesViewController alloc]init];
     self.priceVC.delegate = self;
     self.priceVC.service = self.service;
-    WS(weakSelf)
+
     self.setVC = [[DYPriceRulesUserSetViewController alloc]init];
     self.setVC.service = self.service;
     [self.setVC editClickBlock:^(id data) {

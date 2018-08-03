@@ -67,12 +67,38 @@
         [self.footBtn setTitle:@"更新提醒" forState:UIControlStateNormal];
     }else {
         [self.footBtn setTitle:@"创建提醒" forState:UIControlStateNormal];
+        
+        
+        
+//        if(self.service.stockModel.stockInfo.tickerId){
+//            DYStockPropertyItem * item = [DYStockPropertyService getPropertyItemByTicker:self.service.stockModel.stockInfo.tickerId];
+//            WS(weakSelf)
+//            [self.service getStareWizardPriceRulesWithResultBlock:^(id data) {
+//                [weakSelf stockPropertyItemSelected:YES withModel:item fromStatus:2];
+//            }];
+//        }
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
+}
+
+
+- (void)reload {
+    if(self.service.stockModel && self.service.stockModel.cId.length >0) {
+        [self.footBtn setTitle:@"更新提醒" forState:UIControlStateNormal];
+    }else {
+        [self.footBtn setTitle:@"创建提醒" forState:UIControlStateNormal];
+    }
+    
+    WS(weakSelf)
+    [self.service getStockMarket:@[self.service.stockModel] WithSuccess:^(id data) {
+        [weakSelf.myTableView reloadData];
+    } fail:^(id data) {
+        
+    }];
 }
 
 - (void)initSubViews {

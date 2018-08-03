@@ -40,6 +40,11 @@
     }];
     self.plateView.frame = CGRectMake(0, 220, DYScreenWidth, 35);
     [self.view addSubview:self.plateView];
+    
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 280, DYScreenWidth, 35)];
+    [btn1 setBackgroundColor:[UIColor redColor]];
+    [btn1 addTarget:self action:@selector(push11) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
 }
 
 
@@ -68,6 +73,9 @@
     [super didReceiveMemoryWarning];
 }
 
-
+-(void)push11{
+    UIViewController *vc = [[DYYCInterface shareInstance] getRulesViewControllerWithTicker:@"600105"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end
