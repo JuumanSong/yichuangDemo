@@ -11,6 +11,7 @@
 #import "DYTimeTransformUtil.h"
 #import "DYYCNewMsgsModel.h"
 #import "DYYCStocksMoveService.h"
+#import "DYYC_SiftStock.h"
 
 
 @interface DYYCStockBarIndexView()<DYWebSocketTargetDelegate>
@@ -130,7 +131,10 @@
     if (NilToEmptyDictionary(dic)) {
         dispatch_async(dispatch_get_main_queue(), ^{
             DYYCNewMsgsDataModel *model =[DYYCNewMsgsDataModel yy_modelWithJSON:message];
-            [self setViewWithModel:model];
+            BOOL flag = [[DYYC_SiftStock shareInstance] siftStockWithTicker:model.t sct:model.sct bt:model.bt];
+            if (flag){
+                [self setViewWithModel:model];
+            }
         });
     }
 }
