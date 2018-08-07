@@ -16,8 +16,11 @@
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UILabel *content1Label;//个股名称
+@property (nonatomic, strong) UIButton *tickerNameBtn;//个股名称
 @property (nonatomic, strong) UILabel *content2Label;//异动信号
 @property (nonatomic, strong) UILabel *content3Label;//异动值
+@property (nonatomic, strong) NSString *ticker;
+
 /**
  首先调用一次短链接
  */

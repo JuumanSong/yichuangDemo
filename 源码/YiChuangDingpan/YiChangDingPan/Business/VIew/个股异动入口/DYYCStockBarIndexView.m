@@ -12,7 +12,7 @@
 #import "DYYCNewMsgsModel.h"
 #import "DYYCStocksMoveService.h"
 #import "DYYC_SiftStock.h"
-
+#import "DYYCInterface.h"
 
 @interface DYYCStockBarIndexView()<DYWebSocketTargetDelegate>
 
@@ -65,6 +65,11 @@
         [self addSubview:_content1Label];
         _content1Label.backgroundColor = [UIColor clearColor];
         
+        _tickerNameBtn = [[UIButton alloc] init];
+        [_tickerNameBtn addTarget:self action:@selector(tickerNameBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _tickerNameBtn.backgroundColor =  [UIColor clearColor];
+        [self addSubview:_tickerNameBtn];
+        
         _content2Label = [[UILabel alloc]init];
         _content2Label.textColor = DYAppearanceColor(@"H9", 1);
         _content2Label.font = font;
@@ -108,6 +113,7 @@
 
     CGFloat contentW = (w - CGRectGetMaxX(_timeLabel.frame)-23)/3;
     _content1Label.frame = CGRectMake(CGRectGetMaxX(_timeLabel.frame), 0, contentW, h);
+    _tickerNameBtn.frame = _content1Label.frame;
     _content2Label.frame = CGRectMake(CGRectGetMaxX(_content1Label.frame), 0, contentW, h);
     _content3Label.frame = CGRectMake(CGRectGetMaxX(_content2Label.frame), 0, contentW, h);
 }
@@ -159,6 +165,7 @@
             weakSelf.content1Label.textColor = DYAppearanceColor(@"H9", 1);
             weakSelf.content2Label.textColor = DYAppearanceColor(@"H9", 1);
             weakSelf.content3Label.textColor = DYAppearanceColor(@"H9", 1);
+            weakSelf.ticker = nil;
         }
         
     } fail:^(id data) {
@@ -173,6 +180,14 @@
     self.content1Label.text = dataModel.sn;
     self.content2Label.text = dataModel.moveMsg;
     self.content3Label.text = dataModel.value;
+    
+    if(dataModel.t && dataModel.t.length>0){
+        self.ticker = dataModel.t;
+    }
+    else{
+        self.ticker = nil;
+    }
+    
     NSString *f = dataModel.f;
     if([@"1" isEqualToString: f]){
         self.timeLabel.textColor = DYAppearanceColor(@"R3", 1);
@@ -191,6 +206,15 @@
         self.content1Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
         self.content2Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
         self.content3Label.textColor = DYAppearanceColorFromHex(0xCEA76E, 1);
+    }
+}
+
+
+-(void)tickerNameBtnClick{
+    if(self.ticker){
+        if ([DYYCInterface shareInstance].delegate&&[[DYYCInterface shareInstance].delegate respondsToSelector:@selector(pushToStockDetailVCWithTicker:)]) {
+            [[DYYCInterface shareInstance].delegate pushToStockDetailVCWithTicker:self.ticker];
+        }
     }
 }
 
