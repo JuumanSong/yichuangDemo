@@ -37,6 +37,7 @@
         
         _nameLabelBack = [[UIView alloc] init];
         _nameLabelBack.backgroundColor = DYAppearanceColorFromHex(0x67B1F8, 1);
+        _nameLabelBack.userInteractionEnabled = NO;
         [self addSubview:_nameLabelBack];
         
         _rightImgView = [[UIImageView alloc]initWithImage:DY_ImgLoader(@"stare_price_next", @"YiChuangLibrary")];

@@ -34,6 +34,7 @@
         
         _nameLabelBack = [[UIView alloc] init];
         _nameLabelBack.backgroundColor = DYAppearanceColorFromHex(0x67B1F8, 1);
+        _nameLabelBack.userInteractionEnabled = NO;
         [self addSubview:_nameLabelBack];
         
         _rightImgView = [[UIImageView alloc]initWithImage:DY_ImgLoader(@"stare_price_next", @"YiChuangLibrary")];
@@ -107,15 +108,15 @@
     maskLayer.path = maskPath.CGPath;
     _nameLabelBack.layer.mask = maskLayer;
     
-    
     _nameLabel.frame = CGRectMake(5, 0, 55, h);
     _timeLabel.frame = CGRectMake(CGRectGetMaxX(_nameLabel.frame)+15, 0,45, h);
 
     CGFloat contentW = (w - CGRectGetMaxX(_timeLabel.frame)-23)/3;
     _content1Label.frame = CGRectMake(CGRectGetMaxX(_timeLabel.frame), 0, contentW, h);
-    _tickerNameBtn.frame = _content1Label.frame;
     _content2Label.frame = CGRectMake(CGRectGetMaxX(_content1Label.frame), 0, contentW, h);
     _content3Label.frame = CGRectMake(CGRectGetMaxX(_content2Label.frame), 0, contentW, h);
+    
+    _tickerNameBtn.frame = CGRectMake(CGRectGetMaxX(_nameLabel.frame)+15, 0,size.width-CGRectGetMaxX(_nameLabel.frame)-15, h);
 }
 
 
