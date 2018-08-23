@@ -38,9 +38,9 @@
     Method toMethod = class_getInstanceMethod(objc_getClass("__NSArrayM"), @selector(dy_MultobjctAtIndex:));
     method_exchangeImplementations(fromMethod, toMethod);
     
-    fromMethod = class_getInstanceMethod(objc_getClass("__NSArrayM"), @selector(addObject:));
-    toMethod = class_getInstanceMethod(objc_getClass("__NSArrayM"), @selector(dy_MulArrayAddObject:));
-    method_exchangeImplementations(fromMethod, toMethod);
+//    fromMethod = class_getInstanceMethod(objc_getClass("__NSArrayM"), @selector(addObject:));
+//    toMethod = class_getInstanceMethod(objc_getClass("__NSArrayM"), @selector(dy_MulArrayAddObject:));
+//    method_exchangeImplementations(fromMethod, toMethod);
     
     if (@available(iOS 11.0, *)) {
         fromMethod = class_getInstanceMethod(objc_getClass("__NSArrayM"), @selector(objectAtIndexedSubscript:));
