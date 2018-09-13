@@ -13,7 +13,8 @@
  板块异动入口View,frame宽最小320  高度35
  */
 @interface DYYC_PlateMoveEnterView : UIControl
-@property (nonatomic, strong) UIImageView *imgView;
+//@property (nonatomic, strong) UIImageView *imgView;
+@property (nonatomic, strong) UIView *nameLabelBack;
 @property (nonatomic, strong) UIImageView *rightImgView;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *timeLabel;

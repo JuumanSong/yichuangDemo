@@ -48,12 +48,15 @@ static DYYCInterface* instance = nil;
     //获取个人配置
     [self requestGeneralRulesDataInfo];
     //获取盯盘列表--特别关注
-     [self requestStareWizardDataInfo];
+    [self requestStareWizardDataInfo];
 }
 
-//用户登录成功
-- (void)userHasLogin{
-    
+//用户登录成功或更改
+- (void)userChanged{
+    //获取个人配置
+    [self requestGeneralRulesDataInfo];
+    //获取盯盘列表--特别关注
+    [self requestStareWizardDataInfo];
 }
 
 //app进入前台调用

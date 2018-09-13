@@ -65,8 +65,8 @@
 //app启动调用
 - (void)appStart;
 
-////用户登录成功后调用
-//- (void)userHasLogin;
+//用户登录成功后调用
+- (void)userChanged;
 
 //app进入前台调用
 - (void)applicationWillEnterForeground;
