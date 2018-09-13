@@ -20,6 +20,7 @@
 #import "DYYCStockHelper.h"
 
 #import "DYPriceRulesPageViewController.h"
+#import "DYYC_SiftStock.h"
 
 
 static DYYCInterface* instance = nil;
@@ -49,12 +50,18 @@ static DYYCInterface* instance = nil;
     [self requestGeneralRulesDataInfo];
     //获取盯盘列表--特别关注
     [self requestStareWizardDataInfo];
+    
 }
 
 //用户登录成功或更改
 - (void)userChanged{
+    
+    [[DYYC_SiftStock shareInstance] clearCache];
+    [DYAdvancedSetService shareInstance].personSettingModel = [DYAdvancedSetService getDefaultGeneralRulesInfo];
+    
     //获取个人配置
     [self requestGeneralRulesDataInfo];
+    
     //获取盯盘列表--特别关注
     [self requestStareWizardDataInfo];
 }

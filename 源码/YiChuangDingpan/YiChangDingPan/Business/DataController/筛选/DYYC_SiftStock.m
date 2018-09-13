@@ -163,19 +163,18 @@ static DYYC_SiftStock *dYYC_SiftStock = nil;
         
         if ([sct isEqualToString:model.sct]) {
             
-            bt_setting =model.bt;
+            bt_setting = model.bt;
             break;
         }
     }
-    NSString *  str =   [bt_setting substringWithRange:NSMakeRange(bt.length, 1)];
-    return ([str integerValue]==1)?YES:NO;
+    NSString *str = [bt_setting substringWithRange:NSMakeRange(bt.length, 1)];
+    return ([str integerValue] == 1)?YES:NO;
 }
 
 /**
 清空缓存
  */
 -(void)clearCache{
-    
     [_cache removeAllObjects];
 }
 @end

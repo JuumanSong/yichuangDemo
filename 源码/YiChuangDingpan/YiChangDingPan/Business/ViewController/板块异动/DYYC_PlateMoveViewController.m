@@ -116,7 +116,7 @@
     [super viewWillLayoutSubviews];
     CGRect frame =self.myTableView.frame;
     frame.origin.y  = 200;
-    CGFloat safeHeight = iPhoneX ? UIView.additionaliPhoneXBottomSafeHeight : 0;
+    CGFloat safeHeight = DYISVirtualHome ? UIView.additionaliPhoneXBottomSafeHeight : 0;
     frame.size.height -=200 + safeHeight;
     self.myTableView.frame =frame;
     _chartView.frame = CGRectMake(0, 0, DYSelfViewWidth, 190);

@@ -257,7 +257,7 @@
     [super viewWillLayoutSubviews];
     
     CGRect rect = self.mainView.frame;
-    CGFloat safeHeight = iPhoneX ? UIView.additionaliPhoneXBottomSafeHeight : 0;
+    CGFloat safeHeight = DYISVirtualHome ? UIView.additionaliPhoneXBottomSafeHeight : 0;
     self.tableView.frame = CGRectMake(0, 40, rect.size.width, rect.size.height - 40 - safeHeight);
 
 }

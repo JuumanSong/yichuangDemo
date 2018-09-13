@@ -60,7 +60,7 @@
 
 -(void)loadBottomView{
     
-    CGFloat safeHeight = iPhoneX ? UIView.additionaliPhoneXBottomSafeHeight : 0;
+    CGFloat safeHeight = DYISVirtualHome ? UIView.additionaliPhoneXBottomSafeHeight : 0;
     UIButton * leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
     [leftButton setTitleColor:DYAppearanceColorFromHex(0x404040, 1) forState:UIControlStateNormal];
     [leftButton setTitle:@"重置" forState:UIControlStateNormal];
@@ -161,7 +161,7 @@
 }
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    CGFloat safeHeight = iPhoneX ? UIView.additionaliPhoneXBottomSafeHeight : 0;
+    CGFloat safeHeight = DYISVirtualHome ? UIView.additionaliPhoneXBottomSafeHeight : 0;
     _myTableView.frame = self.mainView.bounds;
     CGRect frame =self.myTableView.frame;
     frame.size.height -= 44 + safeHeight;

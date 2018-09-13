@@ -92,9 +92,9 @@
     
     CGSize size = self.mainView.bounds.size;
     CGFloat toolH = 44;
-    CGFloat safeHeight = iPhoneX ? UIView.additionaliPhoneXBottomSafeHeight : 0;
+    CGFloat safeHeight = DYISVirtualHome ? UIView.additionaliPhoneXBottomSafeHeight : 0;
     if (self.editFlag) {
-        self.myTableView.frame = CGRectMake(0, 0, size.width, size.height - toolH);
+        self.myTableView.frame = CGRectMake(0, 0, size.width, size.height - toolH - safeHeight);
         self.toolView.hidden = NO;
     }else {
         self.toolView.hidden = YES;
