@@ -103,10 +103,14 @@
  返回格式：{webSocketBase:@"",ycBase:@""}
  */
 - (NSDictionary *)getBaseUrl{
-    NSDictionary *dic = @{@"webSocketBase":@"ws://101.226.198.90:8722/",
-                          @"ycBase":@"https://gw.wmcloud-stg.com/fcsc/"};
+//    NSDictionary *dic = @{@"webSocketBase":@"ws://101.226.198.90:8722/",
+//                          @"ycBase":@"https://gw.wmcloud-stg.com/fcsc/"};
     //    NSDictionary *dic = @{@"webSocketBase":@"ws://fcsc-staring.respool.wmcloud-stg.com:8722/",
     //                          @"ycBase":@"http://fcsc-staring.respool.wmcloud-stg.com/"};
+    
+        NSDictionary *dic = @{@"webSocketBase":@"ws://staretest.fcsc.com:8722/",
+                              @"ycBase":@"https://staretest.fcsc.com/staringservice/"};
+    
     return dic;
 }
 
